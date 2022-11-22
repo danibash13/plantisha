@@ -1,0 +1,28 @@
+Uri: http://10.139.160.15/
+File Name: C:\Users\COS\Desktop\Programas COS\HTML\Plantilla V1\10.139.160.15\index.htm
+Content Type: text/html
+
+Uri: http://10.139.160.15/PalabrasClaveSalud.html
+File Name: C:\Users\COS\Desktop\Programas COS\HTML\Plantilla V1\10.139.160.15\PalabrasClaveSalud.html
+Content Type: text/html
+
+Uri: http://10.139.160.15/sorttable.js
+File Name: C:\Users\COS\Desktop\Programas COS\HTML\Plantilla V1\10.139.160.15\sorttable.js
+Content Type: application/javascript
+
+Uri: https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js
+File Name: C:\Users\COS\Desktop\Programas COS\HTML\Plantilla V1\10.139.160.15\npm\@popperjs\core@2.9.2\dist\umd\popper.min.js
+Content Type: application/javascript
+
+Uri: https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css
+File Name: C:\Users\COS\Desktop\Programas COS\HTML\Plantilla V1\10.139.160.15\npm\bootstrap@5.0.1\dist\css\bootstrap.min.css
+Content Type: text/css
+
+Uri: https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js
+File Name: C:\Users\COS\Desktop\Programas COS\HTML\Plantilla V1\10.139.160.15\npm\bootstrap@5.0.1\dist\js\bootstrap.min.js
+Content Type: application/javascript
+
+Uri: https://es.gowork.com/media/cache/resolve/company_logo_profile/uploads/company_profile_image/25e41bb9-07ad-a288-9d98-695b79fd1863/dd55cce1f6aa6e9cd671b30356e1ffe1.png
+File Name: C:\Users\COS\Desktop\Programas COS\HTML\Plantilla V1\10.139.160.15\media\cache\resolve\company_logo_profile\uploads\company_profile_image\25e41bb9-07ad-a288-9d98-695b79fd1863\dd55cce1f6aa6e9cd671b30356e1ffe1.png
+Content Type: image/png
+

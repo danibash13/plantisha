@@ -1,0 +1,2765 @@
+﻿<!doctype html>
+<html>
+ <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- ICONO -->
+	<link rel="icon" href="media/cache/resolve/company_logo_profile/uploads/company_profile_image/25e41bb9-07ad-a288-9d98-695b79fd1863/dd55cce1f6aa6e9cd671b30356e1ffe1.png">
+	<!-- FIN ICONO -->
+
+    <!-- Bootstrap CSS -->
+    <link href="npm/bootstrap%405.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+<link href="npm/bootstrap%405.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="npm/%40popperjs/core%402.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="npm/bootstrap%405.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+	<script src="sorttable.js"></script>
+
+    <title>Plantilla datos mínimos</title>
+
+	<style>
+		span{
+			border: 1px solid black;
+			padding: 5px;
+		}
+		#table1{
+			border-collapse: separate;
+			border-spacing: 1vw 1vh;
+		}
+		#textoWVD1{
+			font-size: 18px;
+		}
+		#textoWVD2{
+			font-size: 16px;
+		}
+	</style>
+  </head>
+<body class="bg-light">
+<form method="" type="" id="form" onsubmit="return false">
+<div class="container-xxl">
+   <div class="row">
+	<div class="col-12">
+		<center>
+
+			<a class="btn btn-info col-5" data-bs-toggle="collapse" href="#ResIncidencias" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+				<h3>Resolución incidencias</h3>
+			</a>
+
+			<a class="btn btn-danger col-5" data-bs-toggle="collapse" href="#Rechazos" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+				<h3>Rechazos</h3>
+			</a>
+
+			<div class="btn-group col-10" role="group" aria-label="Basic radio toggle button group" onchange="plantilla()" style="margin-top: 5px">
+
+				<input type="radio" class="btn-check" name="btnradio" id="mGenerica" autocomplete="off" checked="">
+				<label class="btn btn-outline-primary" for="mGenerica"><h3>Plantilla Genérica</h3></label>
+
+				<input type="radio" class="btn-check" name="btnradio" id="mAppcol" autocomplete="off">
+				<label class="btn btn-outline-primary" for="mAppcol"><h3>Appcol</h3></label>
+
+				<input type="radio" class="btn-check" name="btnradio" id="mMasivas" autocomplete="off">
+				<label class="btn btn-outline-primary" for="mMasivas"><h3>Masivas</h3></label>
+
+				<input type="radio" class="btn-check" name="btnradio" id="mActividades" autocomplete="off">
+				<label class="btn btn-outline-primary" for="mActividades"><h3>Actividades</h3></label>
+			</div>
+
+			<button type="reset" class="btn btn-warning col-10" style="margin-top: 5px" onclick="location.reload()" value="Borrar todo"><h3>Borrar todo</h3></button>
+	
+		</center>
+		<div class="collapse multi-collapse multi-collapse-1" id="ResIncidencias">
+			<div class="">
+				<h2>Resolución incidencias</h2>
+				<a class="btn btn-info" data-bs-toggle="collapse" href="#resNT" role="button" aria-expanded="false" aria-controls="collapseExample">
+					Reseteo no titular
+				</a>
+				<a class="btn btn-info" data-bs-toggle="collapse" href="#resLlamada" role="button" aria-expanded="false" aria-controls="collapseExample">
+					Resuelto en la misma llamada
+				</a>
+				<a class="btn btn-info" data-bs-toggle="collapse" href="#reclamacion" role="button" aria-expanded="false" aria-controls="collapseExample">
+					Reclamación
+				</a>
+				<!--a class="btn btn-info" data-bs-toggle="collapse" href="#cookieTemp" role="button" aria-expanded="false" aria-controls="collapseExample">
+					Cookies y temporales
+				</a-->
+				<a class="btn btn-info" data-bs-toggle="collapse" href="#impresoras" role="button" aria-expanded="false" aria-controls="collapseExample">
+					Impresoras
+				</a>
+				<a class="btn btn-info" data-bs-toggle="collapse" href="#mCitrixP" role="button" aria-expanded="false" aria-controls="collapseExample">
+					Envio manual Citrix equipos propios
+				</a>
+				<a class="btn btn-info" data-bs-toggle="collapse" href="#mIEP" role="button" aria-expanded="false" aria-controls="collapseExample">
+					Envio manual Internet Explorer equipos propios
+				</a>
+				<a class="btn btn-info" data-bs-toggle="collapse" href="#mGescom" role="button" aria-expanded="false" aria-controls="collapseExample">
+					Envio manual Gescom
+				</a>
+				<a class="btn btn-info" data-bs-toggle="collapse" href="#mAtenaus" role="button" aria-expanded="false" aria-controls="collapseExample">
+					Envio manual Atenaus
+				</a>
+				<!--a class="btn btn-info" data-bs-toggle="collapse" href="#UserSolve" role="button" aria-expanded="false" aria-controls="collapseExample"  style="margin-top: 3px">
+					Usuario indica que queda solucionado
+				</a-->
+				<a class="btn btn-info" data-bs-toggle="collapse" href="#cuentaDeshabilitada" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 3px">
+					Cuenta deshabilitada
+				</a>
+				<!--a class="btn btn-info" data-bs-toggle="collapse" href="#inGeneral" role="button" aria-expanded="false" aria-controls="collapseExample"  style="margin-top: 3px">
+					Incidencia General
+				</a-->
+				<!--a class="btn btn-info" data-bs-toggle="collapse" href="#opRealizar" role="button" aria-expanded="false" aria-controls="collapseExample"  style="margin-top: 3px">
+					Operativa a Realizar
+				</a-->
+				<a class="btn btn-info" data-bs-toggle="collapse" href="#PendingCustom" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top:3px">
+					Pending Customer
+				</a>
+				<a class="btn btn-info" data-bs-toggle="collapse" href="#RESCAAM" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top:3px">
+					Resolucion CAAM
+				</a>
+				<!--div class="collapse" id="Cpass">
+					<div class="card card-body">
+						<h5>Título incidencias contraseña</h5>
+						<p id="trampa">Incidencia de acceso a sistemas
+						<select id="trampas" onclick="tramp()">
+							<option>PSS</option>
+							<option>SIS</option>
+							<option>IDMS</option>
+							<option>SAP</option>
+							<option>CISWEB</option>
+							<option>Ecampus</option>
+						</select></p>
+						<p id="trampa1"></p><p id="algo" hidden>El cliente presenta una incidencia de acceso a los sistemas.</p><button onclick="copiarTexto(this.previousSibling.previousSibling)" id="tsss" class="btn btn-danger" hidden>Copiar titulo</button>
+					</div>
+					<div class="card card-body">
+						<h5>Cambio de contraseña</h5>
+						<p>Estimado usuario,<br>Agradecemos su llamada y damos por resuelta su incidencia al validar la contraseña y comprobar el correcto acceso.<br>Reciba un cordial saludo.</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+						<p>Estimado usuario,<br>Se ha procedido a solucionar la incidencia de acceso a los sistemas.<br>Sentimos las molestias ocasionadas.<br>Un saludo</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+		  			</div>
+				</div-->
+				<!--div class="collapse" id="resNT">
+		 			<div class="card card-body">
+						<h5>Reseteo a no titular</h5>
+						<p>Buenos días,<br>Se indica al usuario que en cumplimiento de la Ley Orgánica de Protección de Datos, así como la normativa de Seguridad Interna aplicada por Mapfre, no podemos atender la petición de cambio de contraseña a no ser que lo solicite el titular de la cuenta.<br>Reciba un cordial saludo.</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+		  			</div>
+				</div-->
+				<div class="collapse" id="resNT">
+		 			<div class="card card-body">
+						<table>
+							<tr>
+								<th style="border-right: 1px solid black;border-left: 1px solid black;">Título</th>
+								<th style="border-right: 1px solid black;border-left: 1px solid black;">Descripción</th>
+								<th style="border-right: 1px solid black;border-left: 1px solid black;">Cierre</th>
+							</tr>
+							<tr>
+								<td style="border-right: 1px solid black;border-left: 1px solid black;">
+									<p>Incidencia de acceso a sistemas / No titular</p><button onclick="copiarTexto(this.previousSibling)" id="tsss" class="btn btn-danger">Copiar titulo</button>
+								</td>
+								<td style="border-right: 1px solid black;border-left: 1px solid black;">
+									<p>El cliente presenta una incidencia de acceso a los sistemas, detectamos, que quien se pone en contacto con el SAU , no es el titular de la cuenta.</p><button onclick="copiarTexto(this.previousSibling)" id="tsss" class="btn btn-danger">Copiar descripción</button>
+								</td>
+								<td style="border-right: 1px solid black;border-left: 1px solid black;">
+									<p>Estimado usuario,<br>De acuerdo con el cumplimiento de la Ley Orgánica de Protección de Datos, así como la normativa de Seguridad Interna aplicada por Mapfre, no podemos atender la petición de cambio de contraseña a no ser que lo solicite el titular de la cuenta.<br>Reciba un cordial saludo.</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar cierre</button>
+								</td>
+							</tr>
+						</table>	
+					</div>
+				</div> 
+				<div class="collapse" id="resLlamada">
+					<div class="card card-body">
+						<h5>Resuelto en la misma llamada (Pendiente valorar)</h5>
+						<p>Estimado usuario,<br>Agradecemos su llamada y damos por resuelta su incidencia tras confirmarnos que después de<br><textarea id="tResLlamada" onkeyup="fResLlamada()" rows="4" cols="50"></textarea><br>
+				Reciba un cordial saludo.</p><p id="resLlamadaTrampita"></p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+		 			</div>
+				</div>
+				<!--div class="collapse" id="reclamacion">
+					<div class="card card-body">
+						<h5>Reclamacion</h5>
+						<p>Estimado usuario,<br>
+				Procedemos a reclamar su solicitud trasladando la información aportada por usted al grupo técnico.<br>
+				Muchas gracias y disculpe las molestias ocasionadas.</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+		 			 </div>
+				</div-->
+				<div class="collapse" id="reclamacion">
+					<div class="card card-body">
+						<h5>Reclamacion</h5>
+						<table>
+							<tr>
+								<th style="border-right: 1px solid black;border-left: 1px solid black;">Para grupo técnico</th>
+								<th style="border-right: 1px solid black;border-left: 1px solid black;">Para usuario</th>
+							</tr>
+							<tr>
+								<td style="border-right: 1px solid black;border-left: 1px solid black;">
+									<p>El usuario nos reclama la solicitud indicando lo siguiente:
+									<textarea id="reclamacionesTrampa" rows="5" cols="100" onkeyup="trampReclamar()"></textarea></p><p id="trampaReclamar"></p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+								</td>
+								<td style="border-right: 1px solid black;border-left: 1px solid black;">
+									<p>Estimado usuario,<br>
+				Procedemos a reclamar su solicitud trasladando la información aportada por usted al grupo técnico.<br>
+				Muchas gracias y disculpe las molestias ocasionadas.</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+								</td>
+							</tr>
+						</table>
+		 			 </div>
+				</div>
+				<div class="collapse" id="cookieTemp">
+		  			<div class="card card-body">
+						<h5>Cookies y temporales</h5>
+						<p>Estimado usuario,<br>
+				Cerramos su incidencia tras conectarnos a su equipo y hacer una limpieza de Cookies y temporales en el navegador.<br>
+				Muchas gracias y disculpe las molestias ocasionadas.<br>
+				Un saludo.</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+					</div>
+				</div>
+				<div class="collapse" id="impresoras">
+					<div class="card card-body">
+						<h5>Impresoras</h5>
+						<p>Estimado usuario,<br>
+				Cerramos su incidencia tras conectarnos a su equipo y configurar correctamente su impresora.<br>
+				Muchas gracias.<br>
+				Un saludo.</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+					</div>
+				</div>
+				<div class="collapse" id="mCitrixP">
+					<div class="card card-body">
+						<h5>Manual Citrix a equipos propios</h5>
+						<p>Estimado usuario,<br> 
+				Procedemos a resolver su incidencia tras enviarle el manual de configuarción para Citrix en su equipo personal.<br>Muchas gracias.<br>
+				Un saludo.</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+					</div>
+				</div>
+				<div class="collapse" id="mIEP">
+					<div class="card card-body">
+						<h5>Manual Internet Explorer a equipos propios</h5>
+						<p>Estimado usuario/a,<br>Para la resolución de su incidencia adjuntamos un manual de configuración en equipos propios para el navegador "Internet Explorer".<br>Muchas gracias,<br>Un saludo.
+</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+					</div>
+				</div>
+				<div class="collapse" id="mGescom">
+					<div class="card card-body">
+						<h5>Manual Gescom</h5>
+						<p>Estimado usuario,<br>Procedemos a resolver su incidencia tras enviarle el manual de configuarción para Gescom en su equipo personal.<br>Muchas gracias.<br>Un saludo.</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+					</div>
+				</div>
+				<div class="collapse" id="mAtenaus">
+					<div class="card card-body">
+						<h5>Manual Atenaus</h5>
+						<p>Estimado usuario,<br>Procedemos a resolver su incidencia tras enviarle el manual indicaciones para solventar el problema relacionado con la aplicación ATENAUS en su equipo propio.<br>Muchas gracias.<br>Un saludo.</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+					</div>
+				</div>
+				<div class="collapse" id="UserSolve">
+					<div class="card card-body">
+						<h5>Usuario indica que queda solucionado</h5>
+						<p>Estimado usuario,<br>
+				Procedemos al cierre de la solicitud, tras su confirmación del correcto funcionamiento de la aplicación afectada.<br>Gracias de antemano por su colaboración.<br>Sentimos las molestias ocasionadas,<br>Un saludo.</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+		  			</div>
+				</div>
+				<div class="collapse" id="cuentaDeshabilitada">
+					<div class="card card-body">
+						<h5>Cuenta deshabilitada</h5>
+						<p>Estimado usuario,<br>
+				Procedemos a resolver su solicitud tras confirmar que la cuenta para la cual nos solicita la consulta se encuentra deshabilitada.<br>Le rogamos que se ponga en contacto con su responsable de Mapfre para que solicite la rehabilitación del usuario.<br>Muchas gracias.<br>
+				Un saludo.</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+					</div>
+				</div>
+				<div class="collapse" id="inGeneral">
+		 			<div class="card card-body">
+						<h5>Incidencia General</h5>
+						<p>Estimado usuario,<br>
+				Se está produciendo una incidencia general de acceso a la aplicación. La incidencia ya ha sido reportada para su solución.<br>
+				Disculpe las molestias.</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+					</div>
+				</div>
+				<div class="collapse" id="opRealizar">
+					<div class="card card-body">
+						<h5>Operativa a Realizar</h5>
+						<p>Estimado usuario,<br>
+				Cerramos la incidencia tras indicar la operativa a realizar.<br>
+				Un saludo.</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+
+					</div>
+				</div>
+				<div class="collapse multi-collapse" id="PendingCustom">
+					<div class="">
+						<a class="btn btn-primary" data-bs-toggle="collapse" href="#PendingCustomEH" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top:3px">
+							Pending Customer en horario
+						</a>
+						<a class="btn btn-primary" data-bs-toggle="collapse" href="#PendingCustomFH" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top:3px">
+							Pending Customer fuera horario
+						</a>	
+						<a class="btn btn-primary" data-bs-toggle="collapse" href="#PendingCustomEnLlamada" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top:3px">
+							Pending Customer hablado en llamada
+						</a>
+						<div class="collapse" id="PendingCustomEH">					
+				  			<div class="card card-body">
+								<h5>PENDING CUSTOMER  (Para poder poner una incidencia en pendiente de usuario es imprescindible llamar antes dentro del horario establecido)</h5>
+								<p id="trampi">Estimado usuario,<br>Hemos intentado contactar con usted al teléfono <input type="text" id="trampita1" onkeyup="trampas()"> el día <input type="date" id="trampita2" onchange="trampas()"> a las <input type="time" id="trampita3" onchange="trampas()"> sin éxito.<br>
+								<label><input type="checkbox" id="infoSolPSR" name="infoSol" value="capturasPSR" onchange="trampas()"> Capturas de pantalla (Equipo Mapfre) -----</label> <label><input type="checkbox" id="infoSolTH" name="infoSol" value="TelfHora" onchange="trampas()"> Teléfono / Horario -----</label><label><input type="checkbox" id="otraInfoEH" name="infoSol" value="otraInfo" onchange="trampas()"> Otra Información -----</label><label><input type="checkbox" id="propiosCapturasEH" name="infoSol" value="propiosCapturas" onchange="trampas()"> Capturas (Equipos Propios)</label><!--label><input type="checkbox" id="infoSolEstado" name="infoSol" value="estadoSol" onchange="trampas()"> Estado de solicitud</label-->
+								<br><textarea id="textoOtraInfoEH" cols="50" rows="5" hidden="" onkeyup="trampas()"></textarea>
+								<br>Muchas gracias.
+								<br>Un saludo.</p>
+								<p id="trampita"></p><button id="Alo" onclick="copiarTexto(this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+							</div>
+						</div>	
+						<div class="collapse" id="PendingCustomFH">					
+				  			<div class="card card-body">
+								<h5>PENDING CUSTOMER FUERA DE HORARIO</h5>
+								<p>Estimado usuario,<br>Le informamos que nos pondremos en contacto con usted dentro del horario indicado.<br>Para continuar con la gestión de la incidencia, si desea, puede aportar la siguiente información accediendo a través de la web del SAU:<br>
+								<label><input type="checkbox" id="infoSolPSRFH" name="infoSol" value="capturasPSR" onchange="trampasFH()"> Capturas de pantalla (Equipo Mapfre) -----</label> <label><input type="checkbox" id="infoSolTHFH" name="infoSol" value="TelfHora" onchange="trampasFH()"> Teléfono / Horario -----</label><label><input type="checkbox" id="otraInfoFH" name="infoSol" value="otraInfo" onchange="trampasFH()">  Otra Información -----</label><label><input type="checkbox" id="propiosCapturasFH" name="infoSol" value="propiosCapturas" onchange="trampasFH()"> Capturas (Equipos Propios)</label>
+								<br><textarea id="textoOtraInfoFH" cols="50" rows="5" hidden="" onkeyup="trampasFH()"></textarea>
+								<br>Muchas gracias.
+								<br>Un saludo.</p>
+								<p id="trampitaFH"></p><button id="Alo" onclick="copiarTexto(this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+							</div>
+						</div>	
+						<div class="collapse multi-collapse" id="PendingCustomEnLlamada">					
+				  			<div class="card card-body">
+								<h5>Pending customer por no poder adjuntar capturas en la llamada</h5><p>Estimado usuario,<br>Como hemos comentado anteriormente durante la llamada, quedamos a la espera de que adjunte las capturas solicitadas.<br>Muchas gracias,<br>Un saludo.</p><button onclick="copiarTexto(this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="collapse multi-collapse-1" id="RESCAAM">
+					<div class="card card-body">
+						<h5>Resolución CAAM</h5>
+						<p>Estimado usuario,<br>
+						El acceso a portal para profesionales sanitarios ha cambiado, deben acceder con el usuario de Centro Autorizador (CA seguido de una numeración) y la contraseña que tienen de Centro Autorizador, para cualquier duda o incidencia, deberá comunicarse con los siguientes contactos:<br>
+						Teléfono: 902090216 / 91 839 83 02<br>
+						Correo: buzon.centroautorizador@t.mapfre.com<br>
+						Correo 2: sau.caam@t.mapfre.com<br>
+						Esperamos esta información le sirva de ayuda,<br>
+						Un saludo.</p><button onclick="copiarTexto( this.parentElement.previousSibling)" class="btn btn-danger col-4">Copiar resolución</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	
+
+	<div class="collapse" id="Rechazos">
+		<div class="">
+			<h2>Rechazos</h2>
+				<!--a class="btn btn-danger" data-bs-toggle="collapse" href="#Rechazo1" role="button" aria-expanded="false" aria-controls="collapseExample">
+					Información fuera de tiempo
+				</a-->
+				<center>
+				<a class="btn btn-danger col-5" data-bs-toggle="collapse" href="#HPSM" role="button" aria-expanded="false" aria-controls="collapseExample">
+					HPSM
+				</a>
+				<a class="btn btn-success col-6" data-bs-toggle="collapse" href="#CLARITY" role="button" aria-expanded="false" aria-controls="collapseExample">
+					CLARITY
+				</a>
+				</center>
+				<div class="collapse" id="Rechazo1">
+					<div class="card card-body">
+						<h5>Información fuera de tiempo</h5>
+				<p>Estimado usuario,<br>Sentimos informarle que procedemos al cierre de su incidencia tras no aportarse la información solicitada en el plazo establecido para ello. Por favor, cuando disponga de la información, abra una nueva incidencia para que podamos dar una rápida solución a su solicitud.<br>Disculpe las molestias,<br>
+				Un saludo.</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+					</div>
+				</div>
+				<div class="collapse" id="HPSM">
+					<div class="">
+						<a class="btn btn-danger" data-bs-toggle="collapse" href="#IncNoReproHP" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+							No se puede reproducir la incidencia
+						</a>
+						<a class="btn btn-danger" data-bs-toggle="collapse" href="#SolProbNHP" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+							Solucionada: Probar de nuevo
+						</a>
+						<a class="btn btn-danger" data-bs-toggle="collapse" href="#NeedMimosHP" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+							Faltan datos mínimos
+						</a>
+						<a class="btn btn-danger" data-bs-toggle="collapse" href="#RechzCierreHP" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+							Rechazo para cierre
+						</a>
+						<a class="btn btn-danger" data-bs-toggle="collapse" href="#IncidenciaYaExistHP" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+							Incidencia ya dada de alta (DUPLICADA)
+						</a>
+						<a class="btn btn-danger" data-bs-toggle="collapse" href="#RnoColabHP" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+							Reasignaciones no colaborativas
+						</a>
+						<a class="btn btn-danger" data-bs-toggle="collapse" href="#RN3HP" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+							Rechazo nivel 3 (Hacia el usuario)
+						</a>
+						<div class="collapse" id="IncNoReproHP">
+							<div class="card card-body">
+								<h5>Rechazo >> Asignación a grupo con el texto:</h5>
+								<p>
+									Procedemos a la devolución del ticket ya que si como indican, no se detecta incidencia, por favor deben verificar con el usuario que es así y proceder a la resolución directa del ticket utilizando el código de cierre Others/Cause undetected. 
+Le rogamos no procedan a la devolución del ticket al SAU, ya que no es necesario realizar ninguna acción por nuestra parte.<br>Muchas gracias por su comprensión y colaboración.
+								</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+							</div>
+						</div>
+						<div class="collapse" id="SolProbNHP">
+							<div class="card card-body">
+								<h5>Rechazo >> Asignación a grupo con el texto:</h5>
+								<p>
+									Procedemos a la devolución del ticket, informándoles que el grupo resolutor que ha dado solución a la incidencia, es el que debe proceder a resolver la incidencia.<br>Si la incidencia se encuentra solucionada,  deben proceder a  la resolución del caso utilizando el código de resolución que se ajuste a la acción realizada.<br>Recordamos a su vez, que en caso de que se trate de una incidencia operativa, deben proceder a la resolución directa del ticket utilizando el código de cierre Business/Lack Training.<br>Le rogamos no procedan a la devolución del ticket al SAU, ya que no es necesario realizar ninguna acción por nuestra parte.<br>
+<br>Muchas gracias por su comprensión y colaboración. 
+								</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+							</div>
+						</div>
+						<div class="collapse" id="NeedMimosHP">
+							<div class="">
+								<a class="btn btn-danger" data-bs-toggle="collapse" href="#MinPOHP" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+									Datos mínimos necesarios requeridos en P.O.
+								</a>
+								<a class="btn btn-danger" data-bs-toggle="collapse" href="#SinPOHP" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+									Información adicional o sin P.O.
+								</a>
+								<div class="collapse" id="MinPOHP">
+									<div class="card card-body">
+										Recabamos datos y volvemos a escalar cuando hayamos completado la información
+									</div>
+								</div>
+								<div class="collapse" id="SinPOHP">
+									<div class="card card-body">
+										<h5>La rechazamos con el texto de abajo a grupo para que soliciten ellos la información al usuario.</h5>
+										<p>
+											Procedemos a la devolución del ticket informándoles que desde el SAU hemos aportado la información que se nos requiere para estos casos según el procedimiento operativo.<br>Si fuese necesaria información adicional o su servicio carece de Procedimiento operativo delegado al SAU,  la solicitud de esos datos requeridos deben realizarla de forma directa con el usuario.<br>Les recordamos que pueden utilizar el estado en espera de especificaciones/Pending Customer de la herramienta si no es posible el contacto con el usuario.<br><br>Muchas gracias por su comprensión y colaboración.
+										</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="collapse" id="RechzCierreHP">
+							<div class="card card-body">
+								<h5>Reasignamos el ticket con el texto al grupo que ha solucionado la incidencia.</h5>
+								<p>
+									Procedemos a la devolución del ticket ya que si como indican, no se detecta incidencia, por favor deben verificar con el usuario que es así y proceder a la resolución directa del ticket utilizando el código de cierre Others/Cause undetected. 
+Le rogamos no procedan a la devolución del ticket al SAU, ya que no es necesario realizar ninguna acción por nuestra parte.<br>Muchas gracias por su comprensión y colaboración.
+								</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+							</div>
+						</div>
+						<div class="collapse" id="IncidenciaYaExistHP">
+							<div class="">
+								<a class="btn btn-danger" data-bs-toggle="collapse" href="#MismoUserYProblemHP" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+									Incidencia del mismo usuario y misma problemática
+								</a>
+								<a class="btn btn-danger" data-bs-toggle="collapse" href="#DistintoUserMismoProblemHP" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+									Incidencia de distinto usuario pero misma problemática
+								</a>
+								<div class="collapse" id="MismoUserYProblemHP">
+									<div class="card card-body">
+										<h5>Ejecutar desde Service Desk un Rechazo L3 con el código Dismissed by Service Desk --> user--> comunication duplicated con el siguiente texto:</h5>
+										<p>
+											Estimado usuario,<br>Le informamos que estamos gestionando su solicitud a través de la  incidencia <input type="text" id="SDMismoUserYProblemHP" onkeyup="FSDMismoUserYProblemHP()">  y por tanto procedemos al cierre de esta incidencia por duplicidad. Por favor, si necesita reclamar o actualizar su caso, acceda a la Web del SAU y realice las acciones pertinentes. Si tiene alguna consulta sobre la resolución de su incidencia póngase de nuevo en contacto con nosotros en el 91 581 49 00.<br><br>Gracias por su comprensión.<br>Un saludo.
+										</p><p id="TSDMismoUserYProblemHP"></p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+									</div>
+								</div>
+								<div class="collapse" id="DistintoUserMismoProblemHP">
+									<div class="card card-body">
+										Creamos INCIDENCIA MASIVA, relacionando con la IM más antigua las SD'S duplicadas
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="collapse" id="RnoColabHP">
+							<div class="card card-body">
+								<h5>La rechazamos con texto de devolución a grupo para que la rechacen con el código que corresponda y no reasignen.</h5>
+								<p>
+									Procedemos a la devolución del ticket, informándoles que no deben realizar un cambio de grupo de asignación de forma manual, sino proceder al rechazo de la incidencia utilizando el código que se adecúe a la casuística analizada.<br><br>Muchas gracias por su comprensión y colaboración.<br>Un saludo.
+								</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+							</div>
+						</div>
+						<div class="collapse" id="RN3HP">
+							<div class="">
+								<a class="btn btn-danger" data-bs-toggle="collapse" href="#IncidenciaSantanderHP" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+									Si la incidencia es de SANTANDER
+								</a>
+								<a class="btn btn-danger" data-bs-toggle="collapse" href="#IncidenciaNSantanderHP" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+									Si la incidencia NO es de SANTANDER
+								</a>
+								<div class="collapse" id="IncidenciaSantanderHP">
+									<div class="card card-body">
+										<h5>Se realiza un rechazo con el texto de cierre hacia el usuario para que la incidencia quede cerrada.</h5>
+										<p>
+											Estimado usuario,<br>Le informamos que, tras ser analizada su solicitud por el equipo técnico, nos indican lo siguiente:<br><textarea cols="60" rows="5" id="TextoIncidenciaSantanderHP" onkeyup="FIncidenciaSantanderHP()"></textarea><br>En caso de persistir su problema a pesar de las instrucciones que le han proporcionado, rogamos proceda a la apertura de una nueva solicitud a través de la web del SAU.<br>Disculpe las molestias ocasionadas.<br><br>Gracias,<br>Un saludo.
+										</p><p id="TIncidenciaSantanderHP"></p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+									</div>
+								</div>
+								<div class="collapse" id="IncidenciaNSantanderHP">
+									<div class="card card-body">
+										<h5>Se realiza un rechazo con texto de cierre hacia el usuario para que la incidencia quede cerrada.</h5>
+										<p>
+											Estimado usuario,<br>Le informamos que, tras ser analizada su solicitud por el equipo técnico, nos indican lo siguiente:<br><textarea cols="60" rows="5" id="TextoIncidenciaNSantanderHP" onkeyup="FIncidenciaNSantanderHP()"></textarea><br>En caso de persistir su problema a pesar de las instrucciones que le han proporcionado, rogamos proceda a la apertura de una nueva solicitud a través de la web del SAU o puede ponerse en contacto telefónicamente con el SAU donde le atenderemos para revisar su caso.<br>Disculpe las molestias ocasionadas.<br><br>Gracias,<br>Un saludo.
+										</p><p id="TIncidenciaNSantanderHP"></p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="collapse" id="CLARITY">
+					<div class="">
+						<a class="btn btn-success" data-bs-toggle="collapse" href="#NoReproSoluCla" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+							No se puede reproducir / Solucionada probar de nuevo
+						</a>
+						<a class="btn btn-success" data-bs-toggle="collapse" href="#NoDatMinCla" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+							Faltan datos mínimos
+						</a>
+						<a class="btn btn-success" data-bs-toggle="collapse" href="#RechCierreCla" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+							Rechazo para cierre
+						</a>
+						<a class="btn btn-success" data-bs-toggle="collapse" href="#IncidenciaYaExistCla" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+							Incidencia ya dada de alta (DUPLICADA)
+						</a>
+						<div class="collapse" id="NoReproSoluCla">
+							<div class="card card-body">
+								<h5>Tendremos que resolver como Others/ Cause undetected con el texto de cierre estandar para estos casos.</h5>
+								<p>
+											Estimado usuario,<br>Le informamos que, tras ser analizada su solicitud por el equipo técnico, nos indican que no detectan incidencia ya que no se ha podido reproducir el error descrito:<br><textarea cols="60" rows="5" id="TextoNoReproSoluCla" onkeyup="FNoReproSoluCla()"></textarea><br>En caso de persistir, rogamos proceda a la reapertura de su solicitud a través de la web del SAU o puede ponerse en contacto telefónicamente con el SAU donde le atenderemos para revisar su caso.<br>Disculpe las molestias ocasionadas.<br>Un saludo.
+										</p><p id="TNoReproSoluCla"></p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+							</div>
+						</div>
+						<div class="collapse" id="NoDatMinCla">
+							<div class="">
+								<a class="btn btn-success" data-bs-toggle="collapse" href="#NoDatMinPOCla" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+									Datos mínimos requeridos en P.O.
+								</a>
+								<a class="btn btn-success" data-bs-toggle="collapse" href="#InfoAdPOCla" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+									Información adicional o sin P.O.
+								</a>
+								<a class="btn btn-success" data-bs-toggle="collapse" href="#DatTicketCla" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+									Rechazo indicando que faltan datos adjuntos pero vemos que si están en el ticket
+								</a>
+								<div class="collapse" id="NoDatMinPOCla">
+									<div class="card card-body">
+										<h5>Recabamos datos y volvemos a escalar cuando hayamos completado la información</h5>
+									</div>
+								</div>
+								<div class="collapse" id="InfoAdPOCla">
+									<div class="card card-body">
+										<h5>Rechazamos con el texto de devolución a grupo para que soliciten ellos la información al usuario</h5>
+										<p>
+											Procedemos a la devolución del ticket informándoles que desde el SAU hemos aportado la información que se nos requiere para estos casos según el procedimiento operativo.<br>Si fuese necesaria información adicional o su servicio carece de Procedimiento operativo delegado al SAU, la solicitud de esos datos requeridos deben realizarla de forma directa con el usuario.<br>Les recordamos que pueden utilizar el estado en espera de especificaciones/Pending Customer de la herramienta si no es posible el contacto con el usuario.<br><br>Muchas gracias por su comprensión y colaboración.<br>
+										</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+									</div>
+								</div>
+								<div class="collapse" id="DatTicketCla">
+									<div class="card card-body">
+										<h5>Cuando se produce el fallo en la pasarela y hemos adjuntado información suficiente y los adjuntos están en el ticket pero no viajan a Clarity, devolvemos la incidencia indicando en el texto de devolución que deben abrir una incidencia para herramientas.</h5>
+										<p>
+											Procedemos a la devolución del ticket informándoles que desde el SAU hemos aportado la información que se nos requiere para estos casos según el procedimiento operativo.<br>Por favor, deben verificar si los adjuntos constan en alguna de las MU'S asociadas a esta IM  en Clarity.<br>De haberse producido un fallo en la pasarela entre HPSM  y CLARITY y no constar en ninguna MU deberán abrir una incidencia a Herramientas.<br><br>Muchas gracias por su comprensión y colaboración
+										</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="collapse" id="RechCierreCla">
+							<div class="">
+								<a class="btn btn-success" data-bs-toggle="collapse" href="#NoesInCla" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+									Incidencia Operativa: Rechazo indicando: "No es incidencia", "Falsa incidencia", "Error de parametrización"
+								</a>
+								<a class="btn btn-success" data-bs-toggle="collapse" href="#DesProEvPetiCla" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+									Desarrollo en Clarity indica que debe gestionarse como Proyect/Evolutivo/Petición de servicio
+								</a>
+								<a class="btn btn-success" data-bs-toggle="collapse" href="#DesCorreoOpCla" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+									Desarrollo en Clarity indica que envia un correo con operativa, que se anexa a la solicitud.
+								</a>
+								<a class="btn btn-success" data-bs-toggle="collapse" href="#OtrosRechCla" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+									Otros rechazos
+								</a>
+								<div class="collapse" id="NoesInCla">
+									<div class="card card-body">
+										<h5>Ejecutar desde Service Desk un Resolved con el código Business/Lack Training con el siguiente texto de cierre:</h5>
+										<p>Estimado usuario,<br>Le informamos que, tras ser analizada su solicitud por el equipo técnico, nos indican lo siguiente:<br><textarea id="TextoNoesInCla" cols="60" rows="5" onkeyup="FNoesInCla()"></textarea><br>En caso de persistir su problema a pesar de las instrucciones que le han proporcionado, rogamos que proceda a la reapertura de su solicitud a través de la web del SAU o puede ponerse en contacto telefónicamente con el SAU donde le atenderemos para revisar su caso.<br>Disculpe las molestias ocasionadas.<br>Un saludo.
+										</p><p id="TNoesInCla"></p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+									</div>
+								</div>
+								<div class="collapse" id="DesProEvPetiCla">
+									<div class="card card-body">
+										<h5>Ejecutar desde Service Desk un Rechazo L3 con el código Business/Lack Training con el siguiente texto de cierre:</h5>
+										<p>Estimado usuario,<br>Según nos ha indicado el grupo técnico se trata de una petición de Servicio en Clarity o debe gestionarse como proyecto/evoulutivo en Clarity(segun nos indiquen en cada caso...).<br>Para ello tiene que contactar con su área Técnica o con su Centro técnico territorial para que sean ellos los que (si procede) contacten con el Departamento de Sistemática Operativa y este Departamento será el encargado de abrir la petición correspondiente a travé de Clarity.<br><br>Gracias,<br>Un saludo.
+										</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+									</div>
+								</div>
+								<div class="collapse" id="DesCorreoOpCla">
+									<div class="card card-body">
+										<h5>Ejecutar desde Service Desk un Resolved con el código Business/Lack Training con el siguiente texto de cierre:</h5>
+										<p>Estimado usuario,<br>Le informamos que, tras ser analizada su solicitud por el equipo técnico, nos indican que le han enviado un correo con información sobre la operativa a seguir para solucionar su solicitud.<br><textarea id="TextoDesCorreoOpCla" cols="60" rows="5" onkeyup="FDesCorreoOpCla()"></textarea><br>En caso de persistir su problema a pesar de las instrucciones que le han proporcionado, rogamos que proceda a la reapertura de su solicitud a través de la web del SAU o puede ponerse en contacto telefónicamente con el SAU donde le atenderemos para revisar su caso.<br>Gracias.<br>Un saludo.
+										</p><p id="TDesCorreoOpCla"></p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+									</div>
+								</div>
+								<div class="collapse" id="OtrosRechCla">
+									<div class="card card-body">
+										<h5>Procedemos a devolcerla a Clarity con el texto estandar para este tipo de rechazos y una vez entregada procedemos a resolverla.</h5>
+										<p>Si la incidencia se encuentra solucionada, deben proceder a entregar el caso utilizando el código de resolución que se ajuste a la acción realizada.<br>Procedemos a la devolución del ticket, informándoles que el grupo resolutor ha dado solución a la incidencia, debe proceder a entregar la solicitud.<br>Le rogamos no procedan a rechazar el ticket ya que no es necesario realizar ninguna acción desde el Service Desk.<br><br>Muchas gracias por su comprensión y colaboración.<br>Un saludo.
+										</p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="collapse" id="IncidenciaYaExistCla">
+							<div class="">
+								<a class="btn btn-success" data-bs-toggle="collapse" href="#IUserIProbCla" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+									Incidencia del mismo usuario y misma problemática
+								</a>
+								<a class="btn btn-success" data-bs-toggle="collapse" href="#DUserIProbCla" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+									Incidencia del distinto usuario pero misma problemática
+								</a>
+								<a class="btn btn-success" data-bs-toggle="collapse" href="#NoIMMUCla" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 5px">
+									IM / MU no facilitada / incorrecta porque se refiere a una casuística diferente
+								</a>
+								<div class="collapse" id="IUserIProbCla">
+									<div class="card card-body">
+										<h5>Ejecutar desde Service Desk un Rechazo L3 con el código Dismissed by Service Desk --> user --> comunication duplicated con el siguiente texto de cierre:</h5>
+										<p>Estimado usuario,<br>Le informamos que estamos gestionando su solicitud a través de la incidencia <input type="text" id="TextoIUserIProbCla" onkeyup="FIUserIProbCla()"> y por tanto procedemos al cierre de esta incidencia por duplicidad. Por favor, si necesita reclamar o actualizar su caso, acceda a la Web del SAY y realice las acciones pertinentes. Si tiene alguna consulta sobre la resolución de su incidencia póngase de nuevo en contacto con nosotros en el 91 581 49 00.<br><br>Gracias por su comprensión.<br>Un saludo.
+										</p><p id="TIUserIProbCla"></p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+									</div>
+								</div>
+								<div class="collapse" id="DUserIProbCla">
+									<div class="card card-body">
+										<h5>Creamos INCIDENCIA MASIVA, relacionando con la IM más antigua las SD'S duplicadas</h5>
+									</div>
+								</div>
+								<div class="collapse" id="NoIMMUCla">
+									<div class="card card-body">
+										<h5>Procedemos a devolverla a Clarity con el texto estandar para este tipo de rechazos.</h5>
+										<p>Procedemos a la devolución del ticket informándoles que desde el SAU necesitamos un código MU o IM válido para poder gestionar adecuadamente esta solicitud.<br><textarea id="TextoNoIMMUCla" cols="60" rows="5" onkeyup="FNoIMMUCla()"></textarea><br><br>Muchas gracias por su comprensión y colaboración.<br>Un saludo.
+										</p><p id="TNoIMMUCla"></p><button onclick="copiarTexto( this.previousSibling)" class="btn btn-danger">Copiar texto</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+	  	</div>
+	</div>
+</div>
+	<br><br>
+	<hr size="5px" style="margin-top: 5px">
+	<div class="col-6" id="plantillaGenerica">
+		<center>
+			<h1>Plantilla de datos</h1>
+		</center>
+		<table class="table table-striped">
+			<tr id="gAppTitulo">
+				<td>Aplicación (Título): <br>
+					<b id="textoSalud" style="font-size: 2vh;" hidden="">Para creacion de incidencias de salud, es indispensable consultar la guia de palabras clave, <a href="PalabrasClaveSalud.html" target="_blank">pulsa aqui</a></b>
+					<b id="textoPV" style="font-size: 2vh;" hidden="">Elegid el subtitulo correspondiente</b>
+					<b id="taGenesys" style="font-size: 2vh;" hidden="">Elegid el subtitulo correspondiente</b>
+				</td>
+				<td>
+					<select id="rTituApp" onchange="mostrarTitulo(), mostrarDatos()">
+						<option> </option>
+						<option value="CAAM">Centro Autorizador de Actos Medicos (CAAM)</option>
+						<option value="Puesto Virtual">Puesto Virtual</option>
+						<option>Correo Electrónico</option>
+						<option>Dedalo</option>
+						<option>Ecampus</option>
+						<option>Ficha ampliada de cliente</option>
+						<option>Genesys</option>
+						<option>Gescom</option>
+						<option>Gesycore</option>
+						<option>Salud</option>
+						<option>Impresoras HP</option>
+						<option>Impresoras RICOH</option>
+						<option>NSE</option>
+						<option>Navegador</option>
+						<option>Prescripcion Santander</option>
+						<option>Virtualapps</option>
+						<option>Ordenador Desktop</option>
+						<option>SCA</option>
+						<option>SGO</option>
+						<option>Tramesweb</option>
+						<option>Telefonía fija</option>
+						<option>Telefonía móvil</option>
+						<option>WAutemis</option>
+						<option>Otro</option>
+					</select>
+					<input type="text" id="rTituOtro" onkeyup="mostrarTitulo()" hidden="">
+					<input type="text" id="rTituIGes" onkeyup="mostrarTitulo(), mostrarDatos()" placeholder="Número de instalación" hidden="">
+					<select id="rTituSalud" onchange="mostrarTitulo()" hidden="">
+						<option></option>
+						<option>APP Salud</option>
+						<option>Copago (Salud)</option>
+						<option>Gestor Imagenes Digitalizadas (GID)</option>
+						<option>Integración portal centros sanitarios Tirea (PCS TIREA)</option>
+						<option>Portal Profesionales Sanitarios</option>
+						<option>Proveedores Sanitarios (PSS)/Cuadro Médico</option>
+						<option>Proveedores Sanitarios (PSS)/Facturación</option>
+						<option>Sistema de Gestión Dental (OMI360)</option>
+						<option>Sistema Integrado Salud (SIS)/Emisión</option>
+						<option>Sistema Integrado Salud (SIS)/Prestaciones</option>
+						<option>Tarificador Colectivo Salud</option>
+						<option>Tratamiento Automático de Listados (TAL)</option>
+						<option>GESALUD/Emisión</option>
+						<option>GESALUD/Prestaciones</option>
+					</select>
+					<select id="rTituGenesys" onchange="mostrarTitulo()" hidden="">
+						<option value="0"></option>
+						<option value="1">Problemas con la Telefonía</option>
+						<option value="2">Problemas con el VDI</option>
+					</select>
+					<select id="rTituPV" onchange="mostrarTitulo()" onclick="mostrarWVDtexto()" hidden="">
+						<option value="0"></option>
+						<option value="1">WVD (Remote Desktop)</option>
+						<option value="2">VDI (CITRIX)</option>
+					</select>
+
+					<!-- pruebas puesto WVD -->
+					<div id="comprobacionWVD" hidden="">
+					<p id="textoWVD1"><b>En caso de error de acceso,</b> <a id="textoWVD2">se tiene que probar el acceso desde el cliente web accediendo por</a> <b>https://rdweb.wvd.microsoft.com/arm/webclient</b></p>
+						¿Ha podido acceder desde el navegador?<br>
+						<form>
+							<input type="checkbox" onclick="mostrarOpciones1()" onchange="mostrarDatos()" onchange="comprobar(this)" name="opcion1" id="opciones1" value="si">Si
+							<input type="checkbox" onclick="mostrarOpcionesNO1()" onchange="mostrarDatos()" onchange="comprobar(this)" name="opcion1" id="opciones11" value="no">No
+						</form>
+						<div id="siAccedeWVD" hidden="">
+							¿El usuario esta utilizando un equipo de Mapfre?<br>
+						<form>
+							<input type="checkbox" onclick="mostrarOpciones2()" onchange="mostrarDatos()" onchange="comprobar(this)" name="opcion2" id="opciones2" value="si">Si
+							<input type="checkbox" onclick="mostrarOpcionesNO2()" onchange="mostrarDatos()" onchange="comprobar(this)" name="opcion2" id="opcion22" value="no">No
+						</form>
+						</div>
+						<div id="siEquipoMapfre" hidden="">
+							<b>Debemos cancelar suscipción y suscribir de nuevo al usuario en la aplicación Remote Desktop. ¿Le ha funcionado?</b><br>
+							<form>
+								<input type="checkbox" onclick="mostrarOpciones3()" onchange="mostrarDatos()" onchange="comprobar(this)" name="opcion3" id="opciones3" value="si">Si
+								<input type="checkbox" onclick="mostrarOpcionesNO3()" onchange="mostrarDatos()" onchange="comprobar(this)" name="opcion3" id="opciones33" value="no">No
+							</form>
+						</div>
+
+						<div id="siFuncionaSuscripcion" hidden="">
+							<b>Procedemos a resolver la incidencia.</b>
+						</div>
+
+						<div id="noFuncionaSuscripcion" hidden="">
+							Se debe escalar la incidencia a soporte local:<br>
+							<br><b>Entorno de trabajo / Equipamiento TI / Ordenador Desktop / Ordenador Desktop / Problema en Ordenador Desktop.</b>
+						</div>
+					
+						<div id="noEquipoMapfre" hidden=""><b>Se debe mandar manual de reinstalacion de WVD y si el error persiste le indicaremos que acuda a su informatico de confianza.</b></div>
+				
+						<div id="noAccedeWVD" hidden=""><b>Se debe escalar la incidencia a Puesto Virtual.</b><br><br><b>Entorno de trabajo / Equipamiento TI / Puesto Virtual / Incidencia Puesto Virtual / Problema en acceso a Puesto Virtual o Rendimiento.</b></div>
+					</div>
+					<!-- pruebas puesto WVD -->
+				</td>
+			</tr>
+			<tr id="gDescTitulo">
+				<td>Breve descripción del error (Título): <br><br><p><b style="font-size: 2vh;">Nota: se debe indicar la acción a realizar (Por ej.: usuario no puede accder) a continuación se debe dejar reflejado el error literal si es que lo hubiese, o la evidencia del error. Por ej.: NSE - Sin acceso - Página en blanco</b></p></td>
+				<td>
+					<input type="text" id="rTitu" maxlength="70" size="42" onkeyup="mostrarTitulo()">
+					<select id="gTituloCAAM" onchange="mostrarTitulo()" hidden="">
+						<option value="Solicitud de cambio de contraseña">Solicitud  de cambio de contraseña</option>
+						<option value="Solicitud  de desbloqueo de usuario">Solicitud  de desbloqueo de usuario</option>
+						<option value="Solicitud de informacion sobre la operativa">Solicitud de informacion sobre la operativa</option>
+						<option value="otro">Otro</option>
+					</select>
+					<input type="text" id="OtroCAAM" onkeyup="mostrarTitulo()" hidden="">
+				</td>
+			</tr>
+			<tr id="gDescrip">
+				<td>Descripción del problema:<br><br><p><b style="font-size: 2vh;">Nota: se debe realizar una breve descripción de lo que le ocurre al usuario, aportando los datos mínimos y específicos requeridos para cada problemática. Se debe incluir el error literal, si es que lo hubiese, o la evidencia del mismo. Se deben dejar reflejadas las pruebas realizadas con el usuario y el resultado obtenido.</b></p> </td>
+				<td>
+					<textarea id="descripcion" rows="10" cols="50" onkeyup="mostrarDatos()">El usuario indica que </textarea>
+					</td>
+			</tr>
+			<tr id="gNuumaAf">
+				<td>Nuuma del usuario afectado: </td>
+				<td>
+					<input type="text" id="nuumaAfectado" onkeyup="mostrarDatos()" onchange="mostrarDatos()">
+				</td>
+			</tr>
+			<tr id="gGenesysTelef" hidden="">
+				<td colspan="2">
+					<ul>
+						<li><label for="checksTelef">&#191;Checks comprobados antes de comunicar incidencia? </label><input type="checkbox" name="checksTelef" id="gGeneChecksTelef" onchange="mostrarDatos()"></li>
+						<li><label for="UserPass"></label>&#191;Reconoce usuario y contraseña? <input type="checkbox" name="UserPass" id="gGeneUserPass" onchange="mostrarDatos()"></li>
+						<li><label for="Saliente"></label>&#191;Se ha probado a realizar una llamada saliente al móvil? <input type="checkbox" name="Saliente" id="gGeneSaliente" onchange="mostrarDatos()"></li>
+						<li><label for="colaOn"></label>&#191;Me deja ponerme a la cola? <input type="checkbox" name="colaOn" id="gGenecolaOn" onchange="mostrarDatos()"></li>
+						<li><label for="logoMicro"></label>&#191;Han accedido a su cuenta a través del logo de MICROSOFT? <input type="checkbox" name="logoMicro" id="gGeneLogoMicro" onchange="mostrarDatos()"></li>
+					</ul>
+				</td>
+			</tr>
+			<tr id="gGenesysVDI" hidden="">
+				<td colspan="2">
+					<ul>
+						<li><label for="todoConectado">&#191;Dispositivos auxiliares (cascos, teclado, etc) conectados antes de encender el puesto de trabajo? </label><input type="checkbox" name="todoConectado" id="gGenetodoConectado" onchange="mostrarDatos()"></li>
+						<li><label for="conectadosDirectamente"></label>&#191;Cascos conectados directamente a los puertos del ordenador? <input type="checkbox" name="conectadosDirectamente" id="gGeneconectadosDirectamente" onchange="mostrarDatos()"></li>
+						<li><label for="conexUSB"></label>&#191;Cascos por USB? <input type="checkbox" name="conexUSB" id="gGeneconexUSB" onchange="mostrarDatos()"></li>
+						<li><label for="verifCascosPF"></label>&#191;Cascos seleccionados en puesto físico? <input type="checkbox" name="verifCascosPF" id="gGeneverifCascosPF" onchange="mostrarDatos()"></li>
+						<li><label for="verifCascosPV"></label>&#191;Cascos seleccionados en puesto virtual? <input type="checkbox" name="verifCascosPV" id="gGeneverifCascosPV" onchange="mostrarDatos()"></li>
+					</ul>
+				</td>
+			</tr>
+			<tr id="gGenesysVCitrix" hidden="">
+				<td>Versión de Citrix: </td>
+				<td>
+					<input type="text" id="versionCitrix" onkeyup="mostrarDatos()">
+				</td>
+			</tr>
+			<tr id="gNPoli">
+				<td>Número de póliza, recibo, referencia: </td>
+				<td>
+					<input type="text" id="nPoliza" onkeyup="mostrarDatos()">
+				</td>
+			</tr>
+				<td>Tipo de póliza:</td><td>
+					<select id="seleccionarPoliza" name="seleccionarPoliza" onchange="mostrarDatos()">
+						<option value=""></option>
+						<option value="agropecuaria">Agropecuaria</option>
+						<option value="autos">Autos</option>
+						<option value="decesos">Decesos</option>
+						<option value="empresas">Empresas</option>
+						<option value="hogar">Hogar</option>
+						<option value="salud">Salud</option>
+						<option value="viajes">Viajes</option>
+						<option value="otro">Otros</option>
+					</select>
+					<input type="text" id="InputOtrosPoliza" hidden="" onkeyup="mostrarDatos()">
+			
+			</td><tr>
+				<td>NIF del tomador de la póliza:</td>
+				<td>
+					<input type="text" id="NifTomadorPoliza">
+				</td>
+			</tr><tr>
+				<td>Aplicación emisora:</td><td>
+					<select id="seleccionarAplicacion" name="seleccionarAplicacion" onchange="mostrarDatos()">
+						<option id=""></option>
+						<option id="autemis">Autemis</option>
+						<option id="gesalud">Gesalud</option>
+						<option id="gescom">Gescom</option>
+						<option id="gesvida">Gesvida</option>
+						<option id="grem">GREM</option>
+						<option id="nse">Nuevo sistema de emisiones (NSE)</option>
+						<option id="sac">SAC</option>
+						<option id="seguviajes">Seguviajes</option>
+						<option id="sis/emision">SIS/Emision</option>
+						<option id="wautemis">Wautemis</option>
+						<option id="otros">Otros</option>
+					</select>
+					<input type="text" id="InputOtrosAplicacion" hidden="" onkeyup="mostrarDatos()">
+			</td></tr>
+			<tr id="gNMatri">
+				<td>Número de matrícula: </td>
+				<td>
+					<input type="text" id="nMat" onkeyup="mostrarDatos()">
+				</td>
+			</tr>
+			<tr id="gDNICIFNIF">
+				<td>NIF / CIF (Prescriptores Santander): </td>
+				<td>
+					<input type="text" id="gCIFNIF" onkeyup="mostrarDatos()">
+				</td>
+			</tr>
+			<tr id="gTOficina">
+				<td>Tipo de oficina: </td>
+				<td>
+					<select id="tOfiGenesys" onchange="mostrarDatos(), mostrarTitulo()" hidden="">
+						<option value="Oficina Mapfre">Oficina Mapfre</option>
+						<option value="Teletrabajo">Teletrabajo</option>
+					</select>
+					<select id="tOfi" onchange="mostrarDatos(), mostrarTitulo()">
+						<option value="">&nbsp;</option>
+						<option>Oficina Directa</option>
+						<option>Oficina Delegada</option>
+						<option value="Teletrabajo">Teletrabajo</option>
+						<option>Oficina Sub central</option>
+						<option>Oficina SI24</option>
+						<option>Oficina Central</option>
+						<option>Oficina Externa</option>
+						<option>Centro médico Mapfre</option>
+						<option>Oficina Llodio</option>
+					</select>
+					<select id="ofiSi24" hidden="" onchange="mostrarDatos(), mostrarTitulo()">
+						<option> </option>
+						<option>Sede las Palmas</option>
+						<option>Sede Barcelona</option>
+						<option>Sede Avila</option>
+						<option>Sede Valladolid</option>
+						<option>Sede Teruel</option>
+						<option>Sede Madrid Comercial</option>
+						<option>Sede Valencia</option>
+						<option>Sede Madrid</option>
+						<option>Sede Unísono</option>
+						<option>Sede Unitono Madrid</option>
+						<option>Sede Unitono Barcelona</option>
+						<option>Sede Marktel Madrid</option>
+						<option>Sede Marktel Valencia</option>
+						<option>Sede GSS</option>
+						<option>Sede AVANZA</option>
+					</select>
+				</td>
+			</tr>
+			<tr id="gTEquipo">
+				<td>Tipo de equipo: </td>
+				<td>
+					<select id="tEqui" onchange="mostrarDatos(), mostrarTitulo()">
+						<option value="">&nbsp;</option>
+						<option value="Equipo Mapfre">Equipo Mapfre</option>
+						<option value="Equipo Propio">Equipo Propio</option>
+					</select>
+			</td></tr>
+			<tr id="gMAcceso">
+				<td>&#191;Desde dónde accede? </td>
+				<td>
+					<select id="pAccGenesys" onchange="mostrarDatos(), mostrarTitulo()" hidden="">
+						<option value="VDI.mapfre.net">VDI.mapfre.net</option>
+						<option value="VDI.mapfre.com">VDI.mapfre.com</option>
+					</select>
+					<select id="pAcc" onchange="mostrarDatos(), mostrarTitulo()">
+						<option value="">&nbsp;</option>
+						<option value="Dedalo">Dedalo</option>
+						<option value="eCampus">eCampus</option>
+						<option value="Portal de Mediadores">Portal de Mediadores</option>
+						<option value="Portal Digital Corredores">Portal Digital Corredores</option>
+						<option value="Portátil">Portátil</option>
+						<option value="profesionalsanitario.mapfre.es">profesionalsanitario.mapfre.es</option>
+						<option value="proveedor.mapfre.es">proveedor.mapfre.es</option>
+						<option value="Puesto Kiosko"> Puesto Kiosko</option>
+						<option value="Pulse"> Pulse</option>
+						<option value="Remote desktop" id="pAccPVRD">Remote desktop</option>
+						<option value="Remote desktop web" id="pAccPVRDW">Remote desktop web</option>
+						<option value="Tablet"> Tablet</option>
+						<option value="Teléfono fijo"> Teléfono fijo</option>
+						<option value="Teléfono móvil"> Teléfono móvil</option>
+						<option value="Thinclient"> Thinclient</option>
+						<option value="VDI.mapfre.net" id="pAccPVDINet">VDI.mapfre.net</option>
+						<option value="VDI.mapfre.com" id="pAccPVDICom">VDI.mapfre.com</option>
+						<option value="Virtualapps"> Virtualapps</option>
+						<option value="Wagentes"> Wagentes</option>
+						<option value="Wdelegados"> Wdelegados</option>
+						<option value="Wportalinterno"> Wportalinterno</option>
+						<option value="Otro">Otro</option>
+					</select>
+					<input type="text" id="pAcc2" onkeyup="mostrarDatos(), mostrarTitulo()" onchange="mostrarDatos(), mostrarTitulo()" hidden="">
+				</td>
+			</tr>
+			<tr id="gNavegador">
+				<td>Navegador: </td>
+				<td>
+					<select id="nav" onchange="mostrarDatos()">
+						<option value="">&nbsp;</option>
+						<option value="Internet Explorer 8">Internet Explorer 8</option>
+						<option value="Internet Explorer 11">Internet Explorer 11</option>
+						<option value="Google Chrome">Google Chrome</option>
+						<option value="Mozilla Firefox">Mozilla Firefox</option>
+						<option value="Microsoft Edge">Microsoft Edge</option>
+					</select>
+				</td>
+			</tr>
+			<tr id="gConexion">
+				<td>Tipo de conexión: </td>
+				<td>
+					<select id="tCon" onchange="mostrarDatos()">
+						<option value="">&nbsp;</option>
+						<option value="Wi-Fi">Wi-FI</option>
+						<option value="VPN">VPN</option>
+						<option value="Móvil">Móvil</option>
+						<option value="Cable">Cable</option>
+						<option value="Pulse">Pulse</option>
+					</select>
+				</td>
+			</tr>
+			<tr id="gTTelefono">
+				<td>Tipo de teléfono: </td>
+				<td>
+					<select id="tipoTelf" onchange="mostrarDatos(),mostrarKM()">
+						<option value="">&nbsp;</option>
+						<option value="Avaya">Avaya</option>
+						<option value="Cisco">Cisco</option>
+					</select>
+				</td>
+				
+			</tr>
+			<td><b id="textoAvaya" style="font-size: 2vh;" hidden="">Seguid el KM8735 si la incidencia es debido a deficiente calidad de audio.</b></td>
+			<tr id="gMACTelefono">
+				<td>MAC teléfono:</td>
+				<td>
+					<input type="text" id="macTelf" onkeyup="mostrarDatos()">
+				</td>
+			</tr>
+			<tr id="gExtTelefono">
+				<td>Extensión teléfono:</td>
+				<td>
+					<input type="text" id="extTelf" onkeyup="mostrarDatos()">
+				</td>
+			</tr>
+			<tr id="gDesdePasa">
+				<td>&#191;Desde cuándo le pasa? </td>
+				<td>
+					<input type="date" id="Dpasa" onclick="mostrarDatos()" onchange="mostrarDatos()">
+				</td>
+			</tr>
+			<tr id="gCantPers">
+				<td>Número de usuarios afectados:</td>
+				<td>
+					<input type="text" name="" id="gNumUsuarios" onkeyup="mostrarDatos()">
+				</td>
+			</tr>
+			<tr id="gTelContacto">
+				<td>Teléfono de contacto: </td>
+				<td>
+					<input type="text" id="Telf1" onkeyup="mostrarDatos()">
+				</td>
+			</tr>
+			<tr id="gEmail">
+				<td>Correo electrónico: </td>
+				<td>
+					<input type="email" id="email" onkeyup="mostrarDatos()">
+				</td>
+			</tr>
+			<tr id="gPersContacto">
+				<td>Persona de contacto: </td>
+				<td>
+					<input type="text" id="user" onkeyup="mostrarDatos()">
+				</td>
+			</tr>
+			<tr id="gUsuarioCA" hidden="">
+				<td>Usuario de CAAM: </td>
+				<td>
+					<input type="text" id="CAUser" onkeyup="mostrarDatos()">
+				</td>
+			</tr>
+			<tr id="gHorarioM">
+				<td>Horario preferente (mañanas): </td>
+				<td>
+					<input type="time" id="HoraM1" onchange="mostrarDatos()">
+					<input type="time" id="HoraM2" onchange="mostrarDatos()">
+				</td>
+			</tr>	
+			<tr id="gHorarioT">
+				<td>Horario preferente (tardes): </td>
+				<td>
+					<input type="time" id="HoraT1" onchange="mostrarDatos()">
+					<input type="time" id="HoraT2" onchange="mostrarDatos()">
+				</td>
+			</tr>
+			<tr id="gHoraCanaria">
+				<td>&#191;Hora canaria? </td>
+				<td>
+					<input type="checkbox" id="hCanaria" onchange="mostrarDatos()">
+				</td>
+			</tr>
+			<tr id="gNumPuesto">
+				<td>Número de puesto: </td>
+				<td>
+					<input type="text" id="puesto" onkeyup="mostrarDatos()" onchange="mostrarDatos()" onclick="mostrarDatos()">
+				</td>
+			</tr>
+			<tr id="gSecuenciaCapturas">
+				<td>&#191;Secuencia de capturas solicitada en llamada? </td>
+				<td>
+					<input type="checkbox" id="capturas" onchange="mostrarDatos()">
+				</td>
+			</tr>
+			<tr id="gClienteCorreo">
+				<td>&#191;Outlook, cliente pesado o correo web?</td>
+				<td>
+					<select onchange="mostrarDatos()" id="tipoCorreo">
+						<option></option>
+						<option>Outlook</option>
+						<option>o365</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+
+	<div class="col-6" id="plantAppcol" hidden="">
+		<center>
+			<h1>Plantilla Appcol</h1>
+		</center>
+		<table class="table table-striped">
+			<tr>
+				<th>Breve descripción del error (Título): </th>
+				<td>
+					<input id="AppTitulo" rows="5" cols="30" onkeyup="appTitulo(), appDatos()">
+				</td>
+			</tr>
+			<tr>
+				<th>Descripción de la Incidencia:</th>
+				<td>
+					<textarea id="AppResumen" rows="5" cols="30" onkeyup="appDatos()"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>Nombre:</th>
+				<td>
+					<input type="text" id="AppNombre" onkeyup="appDatos()">
+				</td>
+			</tr>
+			<tr>
+				<th>Tipo Oficina:</th>
+				<td>
+					<select id="ApptOfi" onchange="appTitulo(), appDatos()">
+						<option>Oficina Mapfre</option>
+						<option>Oficina Externa</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>Tipo de Equipo:</th>
+				<td>
+					<select id="ApptEqui" onchange="appTitulo(), appDatos()">
+						<option>Equipo Mapfre</option>
+						<option>Equipo Propio</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>Nuuma:</th>
+				<td>
+					<input type="text" id="AppNuuma" onkeyup="appDatos()">
+				</td>
+			</tr>
+			<tr>
+				<th>Código profesional:</th>
+				<td>
+					<input type="text" id="AppProfCod" onkeyup="appDatos()">
+				</td>
+			</tr>
+			<tr>
+				<th>Correo electrónico:</th>
+				<td>
+					<input type="text" id="AppEmail" onkeyup="appDatos()"> 
+				</td>
+			</tr>
+			<tr>
+				<th>Teléfono:</th>
+				<td>
+					<input type="text" id="AppTelf" onkeyup="appDatos()">
+				</td>
+			</tr>
+			<tr id="appHorarioM">
+				<th>Horario preferente (mañanas): </th>
+				<td>
+					<input type="time" id="appHoraM1" onchange="appDatos()">
+					<input type="time" id="appHoraM2" onchange="appDatos()">
+				</td>
+			</tr>	
+			<tr id="appHorarioT">
+				<th>Horario preferente (tardes): </th>
+				<td>
+					<input type="time" id="appHoraT1" onchange="appDatos()">
+					<input type="time" id="appHoraT2" onchange="appDatos()">
+				</td>
+			</tr>
+			<tr id="appHoraCanaria">
+				<th>&#191;Hora Canaria? </th>
+				<td>
+					<input type="checkbox" id="apphCanaria" onchange="appDatos()">
+				</td>
+			</tr>
+			<tr>
+				<th>Modelo del Teléfono:</th>
+				<td>
+					<input type="text" id="AppModTelf" onkeyup="appDatos()">
+				</td>
+			</tr>
+			<tr>
+				<th>Número de servicio o parte:</th>
+				<td>
+					<input type="text" id="AppNSP" onkeyup="appDatos()">
+				</td>
+			</tr>
+			<tr>
+				<th>Sistema Operativo:</th>
+				<td>
+					<input type="text" id="AppSO" onkeyup="appDatos()">
+				</td>
+			</tr>
+			<tr>
+				<th>Versión de la Aplicación</th>
+				<td>
+					<input type="text" id="AppVersion" onkeyup="appDatos()">
+				</td>
+			</tr>
+			<tr>
+				<th>Capturas:</th>
+				<td>
+					<input type="checkbox" id="AppCapturas" onchange="appDatos()">
+				</td>
+			</tr>
+			<tr>
+				<th>Logs:</th>
+				<td>
+					<input type="checkbox" id="AppLogs" onchange="appDatos()">
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="col-6" id="plantMasivas" hidden="">
+	
+		<center>
+			<h1>Plantilla Masivas</h1>
+		</center>
+
+		<table class="table table-striped">
+
+			<tr>
+				<th>Elemento afectado (Título): </th>
+				<td>
+					<select id="masTituloApp" onchange="masTitulo1(), masDatos()">
+						<option> </option>
+						<option value="Puesto Virtual">Puesto Virtual</option>
+						<option>Correo Electrónico</option>
+						<option>Dedalo</option>
+						<option>Ecampus</option>
+						<option>Ficha ampliada de cliente</option>
+						<option value="Genesys">Genesys</option>
+						<option>Gescom</option>
+						<option>Gesvida</option>
+						<option>Gesycore</option>
+						<option>Impresoras HP</option>
+						<option>Impresoras RICOH</option>
+						<option>NSE</option>
+						<option>Navegador</option>
+						<option>Prescripcion Santander</option>
+						<option>Ordenador Desktop</option>
+						<option>SCA</option>
+						<option>SGO</option>
+						<option>Tramesweb</option>
+						<option>WAutemis</option>
+						<option>Otro</option>
+					</select>
+					<input type="text" id="masTituloOtro" onkeyup="masTitulo1()" hidden="">
+					<input type="text" id="masTituloIGes" onkeyup="masTitulo1()" placeholder="Número de instalación" hidden="">
+					<select id="mTituGenesys" onchange="masTitulo1()" hidden="">
+						<option value="1">Problemas con la Telefonía</option>
+						<option value="2">Problemas con el VDI</option>
+					</select>
+					<select id="mTituPV" onchange="masTitulo1()" hidden="">
+						<option value="1">WVD (Remote Desktop)</option>
+						<option value="2">VDI (CITRIX)</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>Breve descripción del error (Título): </th>
+				<td>
+					<input id="masTitulo" onkeyup="masTitulo1()">
+				</td>
+			</tr>
+			<tr>
+				<th>Descripción de la Incidencia:</th>
+				<td>
+					<textarea id="masResumen" rows="5" cols="30" onkeyup="masDatos()"></textarea>
+				</td>
+			</tr>
+			<tr id="mGenesysTelef" hidden="">
+				<td colspan="2">
+					<ul>
+						<li><label for="checksTelef">&#191;Checks comprobados antes de comunicar incidencia? </label><input type="checkbox" name="checksTelef" id="mGeneChecksTelef" onchange="masDatos()"></li>
+						<li><label for="UserPass"></label>&#191;Reconoce usuario y contraseña? <input type="checkbox" name="UserPass" id="mGeneUserPass" onchange="masDatos()"></li>
+						<li><label for="Saliente"></label>&#191;Se ha probado a realizar una llamada saliente al móvil? <input type="checkbox" name="Saliente" id="mGeneSaliente" onchange="masDatos()"></li>
+						<li><label for="colaOn"></label>&#191;Me deja ponerme a la cola? <input type="checkbox" name="colaOn" id="mGenecolaOn" onchange="masDatos()"></li>
+						<li><label for="logoMicro"></label>&#191;Han accedido a su cuenta a través del logo de MICROSOFT? <input type="checkbox" name="logoMicro" id="mGeneLogoMicro" onchange="masDatos()"></li>
+					</ul>
+				</td>
+			</tr>
+			<tr id="mGenesysVDI" hidden="">
+				<td colspan="2">
+					<ul>
+						<li><label for="todoConectado">&#191;Dispositivos auxiliares (cascos, teclado, etc) conectados antes de encender el puesto de trabajo? </label><input type="checkbox" name="todoConectado" id="mGenetodoConectado" onchange="masDatos()"></li>
+						<li><label for="conectadosDirectamente"></label>&#191;Cascos conectados directamente a los puertos del ordenador? <input type="checkbox" name="conectadosDirectamente" id="mGeneconectadosDirectamente" onchange="masDatos()"></li>
+						<li><label for="conexUSB"></label>&#191;Cascos por USB? <input type="checkbox" name="conexUSB" id="mGeneconexUSB" onchange="masDatos()"></li>
+						<li><label for="verifCascosPF"></label>&#191;Cascos seleccionados en puesto físico? <input type="checkbox" name="verifCascosPF" id="mGeneverifCascosPF" onchange="masDatos()"></li>
+						<li><label for="verifCascosPV"></label>&#191;Cascos seleccionados en puesto virtual? <input type="checkbox" name="verifCascosPV" id="mGeneverifCascosPV" onchange="masDatos()"></li>
+					</ul>
+				</td>
+			</tr>
+			<tr id="mGenesysVCitrix" hidden="">
+				<td>Versión de Citrix: </td>
+				<td>
+					<input type="text" id="mversionCitrix" onkeyup="masDatos()">
+				</td>
+			</tr>
+			<tr id="mTipoOfi">
+				<th>Tipo de oficina: </th>
+				<td>
+					<select id="mastOfiGenesys" onchange="masDatos(), masTitulo1()" hidden="">
+						<option value="Oficina Mapfre">Oficina Mapfre</option>
+						<option value="Teletrabajo">Teletrabajo</option>
+					</select>
+					<select id="mastOfi" onchange="masDatos(), masTitulo1()">
+						<option value="">&nbsp;</option>
+						<option>Oficina Directa</option>
+						<option>Oficina Delegada</option>
+						<option value="Teletrabajo">Teletrabajo</option>
+						<option>Oficina Sub central</option>
+						<option>Oficina SI24</option>
+						<option>Oficina Central</option>
+						<option>Oficina Externa</option>
+					</select>
+					<select id="masOfiSi24" hidden="" onchange="masDatos(), masTitulo1()">
+						<option> </option>
+						<option>Sede las Palmas</option>
+						<option>Sede Barcelona</option>
+						<option>Sede Avila</option>
+						<option>Sede Valladolid</option>
+						<option>Sede Teruel</option>
+						<option>Sede Madrid Comercial</option>
+						<option>Sede Valencia</option>
+						<option>Sede Madrid</option>
+						<option>Sede Unísono</option>
+						<option>Sede Unitono Madrid</option>
+						<option>Sede Unitono Barcelona</option>
+						<option>Sede Marktel Madrid</option>
+						<option>Sede Marktel Valencia</option>
+						<option>Sede GSS</option>
+						<option>Sede AVANZA</option>
+					</select>
+				</td>
+			</tr>
+			<tr id="mTipoEqui">
+				<th>Tipo de Equipo: </th>
+				<td>
+					<select id="mastEqui" onchange="masDatos(), masTitulo1()">
+						<option value="">&nbsp;</option>
+						<option value="Equipo Mapfre">Equipo Mapfre</option>
+						<option value="Equipo Propio">Equipo Propio</option>
+					</select>
+			</td></tr>
+			<tr id="mPAcc">
+				<th>&#191;Desde dónde accede?: </th>
+				<td>
+					<select id="maspAccGenesys" onchange="masDatos(), masTitulo1()" hidden="">
+						<option value="VDI.mapfre.net">VDI.mapfre.net</option>
+						<option value="VDI.mapfre.com">VDI.mapfre.com</option>
+					</select>
+					<select id="maspAcc" onchange="masDatos(), masTitulo1()">
+						<option value="">&nbsp;</option>
+						<option value="Wportalinterno">Wportalinterno</option>
+						<option value="VDI.mapfre.net" id="mpAccPVDINet">VDI.mapfre.net</option>
+						<option value="VDI.mapfre.com" id="mpAccPVDICom">VDI.mapfre.com</option>
+						<option value="Remote desktop" id="mpAccPVRD">Remote desktop</option>
+						<option value="Remote desktop web" id="mpAccPVRDW">Remote desktop web</option>
+						<option value="Pulse">Pulse</option>
+						<option value="Thinclient">Thinclient</option>
+						<option value="Portátil">Portátil</option>
+						<option value="Puesto Kiosko">Puesto Kiosko</option>
+						<option value="Virtualapps">Virtualapps</option>
+						<option value="proveedor.mapfre.es">proveedor.mapfre.es</option>
+						<option value="Wmediadores">Wmediadores</option>
+						<option value="Impresoras">Impresoras</option>
+						<option value="eCampus">eCampus</option>
+						<option value="Teléfono móvil">Teléfono móvil</option>
+						<option value="Teléfono fijo">Teléfono fijo</option>
+						<option value="Tablet">Tablet</option>
+						<option value="Otro">Otro</option>
+					</select>
+					<input type="text" id="maspAcc2" onkeyup="masDatos(), masTitulo()" onchange="masDatos(), masTitulo1()" hidden="">
+				</td>
+			</tr>
+			<tr id="mCantPers">
+				<th>N&deg; de usuarios Afectados - Impacto de afectacion: </th>
+				<td>
+					<select name="" id="mNumUsuarios" onchange="masDatos()">
+						<option value=""></option>
+						<option value="1 Usuario">1 Usuario</option>
+						<option value="Varios usuarios">Varios usuarios</option>
+						<option value="Sitio/Dpto">Sitio/Dpto</option>
+						<option value="Empresa">Empresa</option>
+					</select> - 
+					<select name="" id="mAfectacion" onchange="masDatos()">
+						<option value=""></option>
+						<option value="25%">25%</option>
+						<option value="50%">50%</option>
+						<option value="75%">75%</option>
+						<option value="100%">100%</option>
+					</select>
+				</td>
+			</tr>
+			<tr id="mPerContac">
+				<th>Persona de contacto:</th>
+				<td>
+					<input id="masPersona" onkeyup="masDatos()">
+				</td>
+			</tr>
+			<tr id="mTelfSec">
+				<th>Teléfono secundario:</th>
+				<td>
+					<input id="masTelf" onkeyup="masDatos()">
+				</td>
+			</tr>
+			<tr id="mEmail">
+				<th>Correo electrónico:</th>
+				<td>
+					<input id="masEmail" onkeyup="masDatos()">
+				</td>
+			</tr>
+			<tr id="mNPuesto">
+				<th>Número de puesto:</th>
+				<td>
+					<input id="masNPuesto" onkeyup="masDatos()">
+				</td>
+			</tr>
+			<tr id="mHorarioM">
+				<th>Horario preferente (mañanas): </th>
+				<td>
+					<input type="time" id="masHoraM1" onchange="masDatos()">
+					<input type="time" id="masHoraM2" onchange="masDatos()">
+				</td>
+			</tr>	
+			<tr id="mHorarioT">
+				<th>Horario preferente (tardes): </th>
+				<td>
+					<input type="time" id="masHoraT1" onchange="masDatos()">
+					<input type="time" id="masHoraT2" onchange="masDatos()">
+				</td>
+			</tr>
+
+		</table>
+
+	</div>
+
+</div></div></form>
+	<div class="col-6" id="div1">
+		<p id="textoGenesys" hidden="">
+			<p id="textoGenesysTelef" style="background-color: #FF0000;color: white;padding: 2px; text-align: center;" hidden="">Recuerda que la línea de catálogo para problemas de Genesys en la aplicación es:<br><u>ENTORNO DE TRABAJO > TELEFONIA > TELEFONIA FIJA > AVAYA > PROBLEMA EN EXTENSIONES AVAYA</u></p>
+			<p id="textoGenesysVDI" style="background-color: #FF0000;color: white;padding: 2px; text-align: center;" hidden="">Recuerda que la línea de catálogo para los problemas con el VDI son:<br><u>ENTORNO DE TRABAJO > EQUIPAMIENTO TI > PUESTO VIRTUAL > INCIDENCIA PUESTO VIRTUAL > PROBLEMA EN ACCESO A PUESTO VIRTUAL O RENDIMIENTO</u></p>
+		
+		<p id="ErrorGenesysAccesoOficina" style="background-color: #FF0000;color: white;padding: 2px; text-align: center;" hidden=""></p>
+		<p id="titulo" class=""></p><center><button onclick="copiarTexto( this.parentElement.previousSibling)" class="btn btn-danger col-4">Copiar titulo</button>
+		<button onclick="copiarTexto( this.parentElement.nextSibling)" class="btn btn-info col-4">Copiar descripción</button></center><p id="Copiar"></p>
+		<div id="customerEnLlamada" hidden=""><hr size="5px"><hr size="5px"><hr size="5px"><hr size="5px"><hr size="5px"><!--h5>Pending customer por no poder adjuntar capturas en la llamada</h5><p>Estimado usuario,<br>Como hemos comentado anteriormente durante la llamada, quedamos a la espera de que adjunte las capturas solicitadas.<br>Muchas gracias,<br>Un saludo.</p><button onclick="copiarTexto( this.parentElement.previousSibling)" class="btn btn-danger col-4">Copiar pending customer</button-->
+			<center>
+			<a class="btn btn-info" data-bs-toggle="collapse" href=".multi-collapse" role="button" aria-expanded="false" aria-controls="ResIncidencias PendingCustom PendingCustomEnLlamada">
+				Pending Customer hablado en llamada
+			</a>
+			</center>
+		</div>
+		<div id="CAAMSol" hidden=""><hr size="5px"><hr size="5px"><hr size="5px"><hr size="5px"><hr size="5px"><!--h5>Pending customer por no poder adjuntar capturas en la llamada</h5><p>Estimado usuario,<br>Como hemos comentado anteriormente durante la llamada, quedamos a la espera de que adjunte las capturas solicitadas.<br>Muchas gracias,<br>Un saludo.</p><button onclick="copiarTexto( this.parentElement.previousSibling)" class="btn btn-danger col-4">Copiar pending customer</button-->
+			<center>
+				<a class="btn btn-info" data-bs-toggle="collapse" href=".multi-collapse-1" role="button" aria-expanded="false" aria-controls="ResIncidencias RESCAAM">
+					Resolución CAAM
+				</a>
+			</center>
+		</div>
+	</div>
+	<div class="container-fluid col-12" id="plantActividades" hidden="">
+		<div class="row">
+			<div class="col-12">
+				<center>
+				<table id="table1" style="text-align:center;">
+					<tr style="color: white">
+						<td style="background-color: #6987C9;"> Attachment Added </td>
+						<td style="background-color: #FF9637;"> Assignment Group Change </td>
+						<td style="background-color: #A4778B;"> Category Change </td>
+						<td style="background-color: #941B0C;"> Claim Comments </td>
+					</tr>
+					<tr style="color: white">
+						<td style="background-color: #2660A4;"> Comunication to Customer </td>
+						<td style="background-color: #B90000;"> Customer Claim Requested</td>
+						<td style="background-color: #BE6C6C;"> Customer Claim Reopen </td>
+						<td style="background-color: #00d5e7;"> Interaction activity: Pending Customer Return </td>
+					</tr>
+					<tr style="color: white">
+						<td style="background-color: #8F95D3;"> Interaction activity: Service Desk Update </td>
+						<td style="background-color: #222E50;"> Operator Update </td>
+						<td style="background-color: #611C35;"> Operator Updates </td>
+						<td style="background-color: #0B7A75;"> Pending Customer Comments </td>
+					</tr>
+					<tr style="color: white">
+						<td style="background-color: #BA6E6E;"> Pending Customer Return </td>
+						<td style="background-color: #FF0022;"> Reject Comments </td>
+						<td style="background-color: #8EA4D2;" colspan=""> Service Desk Update </td>
+						<td style="background-color: #93ACB5;" colspan=""> Update from Customer </td>
+					</tr>
+				</table>
+				</center>
+			</div>
+			<div class="col-6" id="div1">
+				<center>
+					<form onsubmit="return false">
+						<h1>Pegar actividades</h1><center><button type="reset" class="btn btn-danger" onclick="location.reload()" value="Borrar todo">Borrar todo</button></center>
+						<textarea id="texto" rows="8" cols="75" onchange="prueba()"></textarea>
+					</form>
+				</center>
+					<center><h1>Texto para copiar</h1></center>
+					<center><button onclick="copiarTexto(this.parentElement.nextSibling.firstChild.lastChild.previousSibling)" class="btn btn-danger">Copiar texto</button></center><div style="height:24vh; width:100%; overflow: auto;"><table id="tabla" class="col-12" style="height:25vh; width:100%; overflow: auto;"><thead><th>Ordenar</th></thead><tbody id="copiar" class="col-12" style="height:25vh; width:100%; overflow: auto;"></tbody></table></div>
+			</div>
+			<div class="col-5" id="div2">
+				<center><h1>Selección de análisis</h1></center>
+				<div id="pegar" style="height:63vh; width:100%; overflow: auto;"></div>
+			</div>
+		</div>
+	</div>
+   
+
+<script>
+
+	var barrita = "<br>---------------------------------------------------------------------------------------------------";
+
+	function mostrarWVDtexto(){
+			if(document.getElementById("rTituPV").value == 1){
+			document.getElementById("comprobacionWVD").hidden = false;
+			}
+			if(document.getElementById("rTituPV").value == 2){
+			document.getElementById("comprobacionWVD").hidden = true;
+			}
+	}
+	//funciones para mostrar las opciones al elegir puesto virtual Remote Desktop
+	function mostrarOpciones1(){
+		if(document.getElementById("opciones1").value == "si"){
+			document.getElementById("siAccedeWVD").hidden = false;
+			document.getElementById("noAccedeWVD").hidden = true;
+		}
+	}
+
+	function mostrarOpcionesNO1(){
+		if(document.getElementById("opciones11").value == "no"){
+			document.getElementById("noAccedeWVD").hidden = false;
+			document.getElementById("siAccedeWVD").hidden = true;
+		}
+	}
+
+	function mostrarOpciones2(){
+		if(document.getElementById("opciones2").value == "si"){
+		document.getElementById("siEquipoMapfre").hidden = false;
+		document.getElementById("noEquipoMapfre").hidden = true;
+		}
+	}
+
+	function mostrarOpcionesNO2(){
+		if(document.getElementById("opcion22").value == "no"){
+		document.getElementById("noEquipoMapfre").hidden = false;
+		document.getElementById("siEquipoMapfre").hidden = true;
+		}
+	}
+
+	function mostrarOpciones3(){
+		if(document.getElementById("opciones3").value == "si"){
+		document.getElementById("siFuncionaSuscripcion").hidden = false;
+		document.getElementById("noFuncionaSuscripcion").hidden = true;
+		}
+	}
+
+	function mostrarOpcionesNO3(){
+		if(document.getElementById("opciones33").value == "no"){
+		document.getElementById("noFuncionaSuscripcion").hidden = false;
+		document.getElementById("siFuncionaSuscripcion").hidden = true;
+		}
+	}
+
+	// fin funciones para mostrar las opciones al elegir puesto virtual Remote Desktop
+
+	function comprobar(checkbox){
+		otro = checkbox.parentNode.querySelector("[type=checkbox]:not(#" + checkbox.id + ")");
+	
+		if (otro.checked){
+			otro.checked = false;
+		}
+	}
+
+	function plantilla(){
+
+		if(document.getElementById("mAppcol").checked == true){
+
+			document.getElementById("plantillaGenerica").hidden = true;
+			document.getElementById("plantAppcol").hidden = false;
+			document.getElementById("plantMasivas").hidden = true;
+			document.getElementById("plantActividades").hidden = true;
+			document.getElementById("div1").hidden = false;
+
+		}
+
+		if(document.getElementById("mGenerica").checked == true) {
+
+			document.getElementById("plantAppcol").hidden = true;
+			document.getElementById("plantillaGenerica").hidden = false;
+			document.getElementById("plantMasivas").hidden = true;
+			document.getElementById("plantActividades").hidden = true;
+			document.getElementById("div1").hidden = false;
+
+		}
+
+		if(document.getElementById("mMasivas").checked == true) {
+
+			document.getElementById("plantAppcol").hidden = true;
+			document.getElementById("plantillaGenerica").hidden = true;
+			document.getElementById("plantMasivas").hidden = false;
+			document.getElementById("plantActividades").hidden = true;
+			document.getElementById("div1").hidden = false;
+
+		}
+
+		if(document.getElementById("mActividades").checked == true) {
+
+			document.getElementById("plantAppcol").hidden = true;
+			document.getElementById("plantillaGenerica").hidden = true;
+			document.getElementById("plantMasivas").hidden = true;
+			document.getElementById("plantActividades").hidden = false;
+			document.getElementById("div1").hidden = true;
+
+		}
+
+	}
+
+	function masTitulo1(){
+
+		let appTitulo = document.getElementById("masTituloApp").value;
+		let titulo = document.getElementById("masTitulo").value;
+		let tOfi = document.getElementById("mastOfi").value;
+		let tEqui = document.getElementById("mastEqui").value;
+		let pAcc = document.getElementById("maspAcc").value;
+
+		switch(appTitulo){
+			case "Gescom":
+				document.getElementById("masTituloApp").parentElement.parentElement.style.background = "#add8e6";
+				document.getElementById("masTituloIGes").hidden = false;
+				appTitulo = "Gescom - " + document.getElementById("masTituloIGes").value;
+				break;
+			case "Otro":
+				document.getElementById("masTituloOtro").hidden = false;
+				appTitulo = document.getElementById("masTituloOtro").value;
+				break;
+			case "Genesys":
+				document.getElementById("masTituloApp").parentElement.parentElement.style.background = "#add8e6";				
+				document.getElementById("mTituGenesys").hidden = false;
+				break;
+			case "Puesto Virtual":
+				document.getElementById("masTituloApp").parentElement.parentElement.style.background = "#add8e6";
+				document.getElementById("mTituPV").hidden = false;
+				if(document.getElementById("mTituPV").value == 1){
+					appTitulo = "Puesto Virtual / WVD (Remote Desktop)";
+					document.getElementById("mpAccPVDINet").hidden = true;
+					document.getElementById("mpAccPVDICom").hidden = true;
+					document.getElementById("mpAccPVRD").hidden = false;
+					document.getElementById("mpAccPVRDW").hidden = false;
+				}
+				else if(document.getElementById("mTituPV").value == 2){
+					appTitulo = "Puesto Virtual / VDI (CITRIX)";
+					document.getElementById("mpAccPVRD").hidden = true;
+					document.getElementById("mpAccPVRDW").hidden = true;
+					document.getElementById("mpAccPVDINet").hidden = false;
+					document.getElementById("mpAccPVDICom").hidden = false;
+				}	
+				break;
+			default:
+				document.getElementById("mTituPV").hidden = true;
+				document.getElementById("mTituApp").parentElement.parentElement.style.background = "#ebeced";
+				break;
+		}
+
+		if(appTitulo != "Gescom"){
+			document.getElementById("masTituloIGes").hidden = true;
+		}
+		if(appTitulo == "Otro"){
+			document.getElementById("masTituloOtro").hidden = true;
+		}
+		if(appTitulo.includes("Genesys")){
+			document.getElementById("mastOfi").hidden = true;
+			document.getElementById("mastOfiGenesys").hidden = false;
+			tOfi = document.getElementById("mastOfiGenesys").value;
+			document.getElementById("maspAcc").hidden = true;
+			document.getElementById("maspAccGenesys").hidden = false;
+			pAcc = document.getElementById("mastOfiGenesys").value;
+			if(document.getElementById("mTituGenesys").value == 1){
+				document.getElementById("mGenesysTelef").hidden = false;
+				appTitulo = "Genesys / VDI Operaciones - Problemas con la Telefonía";
+				document.getElementById("textoGenesysTelef").hidden = false;
+				document.getElementById("textoGenesysVDI").hidden = true;
+			}
+			else {
+				document.getElementById("mGenesysTelef").hidden = true;
+				document.getElementById("textoGenesysTelef").hidden = true;
+			}
+			if(document.getElementById("mTituGenesys").value == 2){
+				document.getElementById("mGenesysVDI").hidden = false;
+				appTitulo = "Genesys / VDI Operaciones - Problemas con el VDI";
+				document.getElementById("textoGenesysTelef").hidden = true;
+				document.getElementById("textoGenesysVDI").hidden = false;
+			}
+			else{
+				document.getElementById("mGenesysVDI").hidden = true;
+				document.getElementById("textoGenesysVDI").hidden = true;
+			}
+		}
+		else{
+			document.getElementById("maspAcc").hidden = false;
+			document.getElementById("maspAccGenesys").hidden = true;
+			document.getElementById("mastOfi").hidden = false;
+			document.getElementById("mastOfiGenesys").hidden = true;
+		}
+
+		if(pAcc != ""){ 
+			if(pAcc == "Otro") {
+				let pAcc2 = document.getElementById("maspAcc2").value;
+				pAcc2.hidden = false;
+				if(pAcc2 != "")pAcc = pAcc2;
+			}
+
+			pAcc = pAcc;
+			
+		}
+	
+		if(tOfi == "Teletrabajo" && pAcc == "VDI.mapfre.net"){
+				document.getElementById("ErrorGenesysAccesoOficina").hidden = false;
+				document.getElementById("ErrorGenesysAccesoOficina").innerHTML = "<b>Para acceder al VDI desde fuera de la oficina hay que utilizar:<br> https://vdi.mapfre.com</b>"
+			}
+			else if(tOfi == "Oficina Mapfre" && pAcc == "VDI.mapfre.com"){
+				document.getElementById("ErrorGenesysAccesoOficina").hidden = false;
+				document.getElementById("ErrorGenesysAccesoOficina").innerHTML = "<b>Para acceder al VDI desde la oficina hay que utilizar:<br> https://vdi.mapfre.net</b>"
+			}
+			else{
+				document.getElementById("ErrorGenesysAccesoOficina").innerHTML = ""
+				document.getElementById("ErrorGenesysAccesoOficina").hidden = true;
+			}
+		document.getElementById("titulo").innerHTML = appTitulo + " - " + titulo + " / " + tOfi + " / " + tEqui + " / " + pAcc;
+
+	}
+
+	function masDatos(){
+
+		let desc = document.getElementById("masResumen").value;
+		let telf = document.getElementById("masTelf").value;
+		let email = document.getElementById("masEmail").value;
+		let puesto = document.getElementById("masNPuesto").value;
+		let persona = document.getElementById("masPersona").value;
+		let tEqui = document.getElementById("mastEqui").value;
+		let pAcc = document.getElementById("maspAcc").value;
+		let tOfi = document.getElementById("mastOfi").value;
+		let versionCitrix = (document.getElementById("mversionCitrix").hidden == false)?document.getElementById("versionCitrix").value: "";
+		let nUsuarios = document.getElementById("mNumUsuarios").value;
+		let afectacion = document.getElementById("mAfectacion").value;
+		
+		if(afectacion != "") {
+			afectacion = "<br>Impacto de afectación: " + afectacion;
+			ponerBarrita = true;
+		}
+		if(nUsuarios != "") {
+			nUsuarios = "<br>Número de usuarios afectados: " + nUsuarios;
+			ponerBarrita = true;
+		}
+		if(versionCitrix != "") {
+			versionCitrix = "<br>Versión de Citrix: " + versionCitrix;
+			ponerBarrita = true;
+		}
+		if(tEqui != "") tEqui = "<br>Tipo de equipo: " + tEqui;
+		if(pAcc != ""){ 
+			if(pAcc == "Otro") {
+				let pAcc2 = document.getElementById("maspAcc2");
+				pAcc2.hidden = false;
+				if(pAcc2.value != "")pAcc = pAcc2.value;
+			}
+			else document.getElementById("pAcc2").hidden = true;
+
+			pAcc = "<br>¿Desde dónde accede?: " + pAcc;
+			
+		}
+		if(tOfi != "") {
+			let ofiSi24 = "";
+			ponerBarrita = true;
+			if(tOfi == "Oficina SI24"){
+				document.getElementById("masOfiSi24").hidden = false;
+				if(document.getElementById("masOfiSi24").value != "") ofiSi24 = " -- " + document.getElementById("masOfiSi24").value;
+			}
+			else {
+				document.getElementById("masOfiSi24").hidden = true;
+				ofiSi24 = "";
+			}
+			tOfi = "<br>Tipo de oficina: " + tOfi + ofiSi24;
+		}
+		else {
+			document.getElementById("masOfiSi24").hidden = true;
+			ofiSi24 = "";
+		}
+		
+		var comproGeneral = "";
+		var comproUserPass = "";
+		var comproSaliente = "";
+		var comproColaOn = "";
+		var comproAcceso = "";
+
+		if(document.getElementById("mGenesysTelef").hidden == false){
+			comproGeneral = (document.getElementById("mGeneChecksTelef").checked)? "Se confirman con el usuario los checks antes de dar la incidencia<br>" : "";
+			comproUserPass = (document.getElementById("mGeneUserPass").checked)? "Se confirma con el usuario que reconoce su usuario y contraseña<br>" : "";
+			comproSaliente = (document.getElementById("mGeneSaliente").checked)? "Se confirma con el usuario que puede hacer llamadas salientes<br>" : "";
+			comproColaOn = (document.getElementById("mGenecolaOn").checked)? "Se confirma con el usuario que puede ponerse en cola<br>" : "";
+			comproAcceso = (document.getElementById("mGeneLogoMicro").checked)? "Se confirmacon el usuario que accede a través del logo de microsoft<br>" : "";
+		}
+		
+		var WVD1 = "";
+		var WVD2 = "";
+		var WVD3 = "";
+		var WVD4 = "";
+
+		WVD1 = (document.getElementById("opciones1").checked)? "<br>Se prueba a acceder a través de https://rdweb.wvd.microsoft.com/arm/webclient y accede correctamente.<br>" : "";
+		
+		WVD4 = (document.getElementById("opciones11").checked)? "<br>Se prueba a acceder a través de https://rdweb.wvd.microsoft.com/arm/webclient, pero el problema persiste.<br>" : "";
+
+		if(document.getElementById("siEquipoMapfre").hidden == false){
+			WVD2 = (document.getElementById("opciones3").checked)? "Probamos a cancelar suscripción y suscribir al usuario en la aplicación remote desktop, y tras realizar dicha prueba confirmamos que el problema queda resuelto.<br>" : "";
+
+		}
+
+		if(document.getElementById("siEquipoMapfre").hidden == false){
+			WVD3 = (document.getElementById("opciones33").checked)? "Probamos a cancelar suscripción y suscribir al usuario en la aplicación remote desktop, pero el problema persiste.<br>" : "";
+
+		}
+
+		var comproTodoCon = "";
+		var comproConecDirec = "";
+		var comproConexUSB = "";
+		var comproVerifCPF = "";
+		var comproVerifCPV = "";
+
+		if(document.getElementById("mGenesysVDI").hidden == false){
+			comproTodoCon = (document.getElementById("mGenetodoConectado").checked)? "Se confirma con el usuario que estaba todo conectado antes de iniciar el puesto<br>" : "";
+			comproConecDirec = (document.getElementById("mGeneconectadosDirectamente").checked)? "Se confirma con el usuario que los cascos estan conectados directamente al puesto físico<br>" : "";
+			comproConexUSB = (document.getElementById("mGeneconexUSB").checked)? "Se confirma con el usuario que los cascos estan por USB<br>" : "";
+			comproVerifCPF = (document.getElementById("mGeneverifCascosPF").checked)? "Se confirma con el usuario que estan seleccionados en el puesto físico<br>" : "";
+			comproVerifCPV = (document.getElementById("mGeneverifCascosPF").checked)? "Se confirmacon el usuario que estan seleccionados en el puesto virtual<br>" : "";
+		}
+
+		let HoraM1 = document.getElementById("masHoraM1").value;
+		let HoraM2 = document.getElementById("masHoraM2").value;
+		let HoraT1 = document.getElementById("masHoraT1").value;
+		let HoraT2 = document.getElementById("masHoraT2").value;
+
+		let HoraM = "";
+		if(HoraM1 != "" && HoraM2 != "") HoraM = "<br>Horario de contacto de: " + HoraM1 + " a " + HoraM2;
+		let HoraT = "";
+		if(HoraT1 != "" && HoraT2 != "") HoraT = " y de " + HoraT1 + " a " + HoraT2;
+
+		if(desc != "") desc = "Descripción del problema:<br>" + desc + barrita;
+		if(tOfi != "") tOfi = "<br>Tipo de oficina: " + tOfi;
+		if(telf != "") telf = "<br>Teléfono: " + telf;
+		if(email != "") email = "<br>Correo electrónico: " + correoMapfre(email);
+		if(puesto != "") puesto = "<br>Número de puesto: " + puesto;
+		if(persona != "") persona = "<br>Persona de contacto: " + persona;
+
+		document.getElementById("Copiar").innerHTML = desc + comproTodoCon + comproConecDirec + comproConexUSB + comproVerifCPF + comproVerifCPV + comproGeneral + WVD1 + WVD2 + WVD3 + WVD4 + comproUserPass + comproSaliente + comproColaOn + comproAcceso + versionCitrix + tOfi + tEqui + pAcc + nUsuarios + afectacion + persona + email + telf + puesto + HoraM + HoraT;
+
+	}
+	
+	function appTitulo(){
+
+		let titulo = document.getElementById("AppTitulo").value;
+		let tOfi = document.getElementById("ApptOfi").value;
+		let tEqui = document.getElementById("ApptEqui").value;
+
+		document.getElementById("titulo").innerHTML = "Appcol - " + titulo + " / " + tOfi + " / " + tEqui + " / Appcol";
+		
+	}
+
+	function appDatos(){
+
+		let desc = document.getElementById("AppResumen").value;
+		let nombre = document.getElementById("AppNombre").value;
+		let nuuma = document.getElementById("AppNuuma").value;
+		let tOfi = document.getElementById("ApptOfi").value;
+		let tEqui = document.getElementById("ApptEqui").value;
+		let codProf = document.getElementById("AppProfCod").value;
+		let email = document.getElementById("AppEmail").value;
+		let telf = document.getElementById("AppTelf").value;
+		let modTelf = document.getElementById("AppModTelf").value;
+		let SO = document.getElementById("AppSO").value;
+		let NSP = document.getElementById("AppNSP").value;
+		let vApp = document.getElementById("AppVersion").value;
+		let capturas = document.getElementById("AppCapturas").checked;
+		let logs = document.getElementById("AppLogs").checked;
+		let HoraM1 = document.getElementById("appHoraM1").value;
+		let HoraM2 = document.getElementById("appHoraM2").value;
+		let HoraT1 = document.getElementById("appHoraT1").value;
+		let HoraT2 = document.getElementById("appHoraT2").value;
+		let hCanaria = document.getElementById("apphCanaria").checked;
+
+		if(desc != "") desc = "Descripción del problema:<br>" + desc + barrita;
+		if(tOfi != "") tOfi = "<br>Tipo de Oficina: " + tOfi;
+		if(tEqui != "") tEqui = "<br>Tipo de Equipo: " + tEqui;
+		if(vApp != "") vApp = "<br>Versión de la aplicación: " + vApp;
+		if(telf != "") telf = "<br>Teléfono: " + telf;
+		if(NSP != "") NSP = "<br>Número de servicio o parte: " + NSP;
+		if(SO != "") SO = "<br>Sistema Operativo: " + SO;
+		if(email != "") email = "<br>Correo Electrónico: " + correoMapfre(email);
+		if(modTelf != "") modTelf = "<br>Modelo de Teléfono: " + modTelf;
+		if(codProf != "") codProf = "<br>Código Profesional: " + codProf;
+		if(nuuma != "") nuuma = "<br>Nuuma: " + nuuma;		
+		if(nombre != "") nombre = "<br>Nombre: " + nombre;		
+		if(capturas) capturas = "<br>&#191;Capturas? Si";
+		else capturas = "";		
+		if(logs) logs = "<br>&#191;Logs? Si";
+		else logs = "";
+
+		
+		if(hCanaria) hCanaria = "Hora canaria (Una hora menos) ";
+		else hCanaria = "";
+		let HoraM = "";
+		if(HoraM1 != "" && HoraM2 != "") HoraM = "<br>Horario de contacto de: " + hCanaria + HoraM1 + " a " + HoraM2;
+		let HoraT = "";
+		if(HoraT1 != "" && HoraT2 != "") HoraT = " y de " + HoraT1 + " a " + HoraT2;
+
+		document.getElementById("Copiar").innerHTML = desc + nombre + nuuma + tOfi + tEqui + codProf + email + telf + HoraM + "" + HoraT + modTelf + SO + NSP + vApp + capturas + logs;
+	
+	}
+
+	function mostrarKM(){
+		let valor = document.getElementById("tipoTelf").value;
+
+		if(valor==="Avaya"){
+			document.getElementById("textoAvaya").hidden = false;
+		}else{
+			document.getElementById("textoAvaya").hidden = true;
+		}
+	}
+
+	function mostrarTitulo() {
+		let titulo = document.getElementById("rTitu").value;
+		let appTitulo = document.getElementById("rTituApp").value;
+		let tOfi = document.getElementById("tOfi").value;
+		let tEqui = document.getElementById("tEqui").value;
+		let pAcc = document.getElementById("pAcc").value;
+		let opcional = "";
+
+		switch(appTitulo){
+			case "Gescom": case "Salud": case "Genesys":
+				document.getElementById("rTituApp").parentElement.parentElement.style.background = "#add8e6";
+				document.getElementById("rTituPV").hidden = true;
+				document.getElementById("textoPV").hidden = true;
+				document.getElementById("pAccPVDINet").hidden = false;
+				document.getElementById("pAccPVDICom").hidden = false;
+				document.getElementById("pAccPVRD").hidden = false;
+				document.getElementById("pAccPVRDW").hidden = false;
+				break;
+			case "Puesto Virtual":
+				document.getElementById("rTituApp").parentElement.parentElement.style.background = "#add8e6";
+				document.getElementById("rTituPV").hidden = false;
+				document.getElementById("textoPV").hidden = false;
+				if(document.getElementById("rTituPV").value == 1){
+					appTitulo = "Puesto Virtual / WVD (Remote Desktop)";
+					document.getElementById("pAccPVDINet").hidden = true;
+					document.getElementById("pAccPVDICom").hidden = true;
+					document.getElementById("pAccPVRD").hidden = false;
+					document.getElementById("pAccPVRDW").hidden = false;
+				}
+				else if(document.getElementById("rTituPV").value == 2){
+					appTitulo = "Puesto Virtual / VDI (CITRIX)";
+					document.getElementById("pAccPVRD").hidden = true;
+					document.getElementById("pAccPVRDW").hidden = true;
+					document.getElementById("pAccPVDINet").hidden = false;
+					document.getElementById("pAccPVDICom").hidden = false;
+				}
+				break;
+			default:
+				document.getElementById("rTituPV").hidden = true;
+				document.getElementById("textoPV").hidden = true;
+				document.getElementById("pAccPVDINet").hidden = false;
+				document.getElementById("pAccPVDICom").hidden = false;
+				document.getElementById("pAccPVRD").hidden = false;
+				document.getElementById("pAccPVRDW").hidden = false;
+				document.getElementById("rTituApp").parentElement.parentElement.style.background = "#ebeced";
+				break;
+		}
+
+		if(appTitulo == "Otro"){
+			document.getElementById("rTituOtro").hidden = false;
+			appTitulo = document.getElementById("rTituOtro").value;
+		}
+		else document.getElementById("rTituOtro").hidden = true;
+
+		if(appTitulo == "Gescom"){
+			document.getElementById("rTituIGes").hidden = false;
+			appTitulo = "Gescom - " + document.getElementById("rTituIGes").value;
+		}
+		else {
+			document.getElementById("rTituIGes").hidden = true;
+		}
+
+		if(appTitulo == "Salud"){
+			document.getElementById("rTituSalud").hidden = false;
+			document.getElementById("textoSalud").hidden = false;
+			appTitulo = document.getElementById("rTituSalud").value;
+		}
+		else {
+			document.getElementById("rTituSalud").hidden = true;
+			document.getElementById("textoSalud").hidden = true;
+		}
+		if(appTitulo.includes("Genesys")){
+			document.getElementById("gNPoli").hidden = true;
+			document.getElementById("gNMatri").hidden = true;
+			document.getElementById("gDNICIFNIF").hidden = true;
+			document.getElementById("gTTelefono").hidden = true;
+			document.getElementById("gMACTelefono").hidden = true;
+			document.getElementById("gExtTelefono").hidden = true;
+			document.getElementById("gClienteCorreo").hidden = true;
+			
+			document.getElementById("taGenesys").hidden = false;
+			document.getElementById("rTituGenesys").hidden = false;
+			document.getElementById("textoGenesys").hidden = false;
+			document.getElementById("tOfiGenesys").hidden = false;
+			tOfi = document.getElementById("tOfiGenesys").value;
+			document.getElementById("pAccGenesys").hidden = false;
+			pAcc = document.getElementById("pAccGenesys").value;
+			document.getElementById("gGenesysVCitrix").hidden = false;
+			if(document.getElementById("rTituGenesys").value == 1){
+				document.getElementById("gGenesysTelef").hidden = false;
+				appTitulo = "Genesys / VDI Operaciones - Problemas con la Telefonía";
+				document.getElementById("textoGenesysTelef").hidden = false;
+				document.getElementById("textoGenesysVDI").hidden = true;
+			}
+			else {
+				document.getElementById("gGenesysTelef").hidden = true;
+				document.getElementById("textoGenesysTelef").hidden = true;
+			}
+			if(document.getElementById("rTituGenesys").value == 2){
+				document.getElementById("gGenesysVDI").hidden = false;
+				appTitulo = "Genesys / VDI Operaciones - Problemas con el VDI";
+				document.getElementById("textoGenesysTelef").hidden = true;
+				document.getElementById("textoGenesysVDI").hidden = false;
+			}
+			else{
+				document.getElementById("gGenesysVDI").hidden = true;
+				document.getElementById("textoGenesysVDI").hidden = true;
+			}
+			document.getElementById("tOfi").hidden = true;
+			document.getElementById("pAcc").hidden = true;
+
+			if(tOfi == "Teletrabajo" && pAcc == "VDI.mapfre.net"){
+				document.getElementById("ErrorGenesysAccesoOficina").hidden = false;
+				document.getElementById("ErrorGenesysAccesoOficina").innerHTML = "<b>Para acceder al VDI desde fuera de la oficina hay que utilizar:<br> https://vdi.mapfre.com</b>"
+			}
+			else if(tOfi == "Oficina Mapfre" && pAcc == "VDI.mapfre.com"){
+				document.getElementById("ErrorGenesysAccesoOficina").hidden = false;
+				document.getElementById("ErrorGenesysAccesoOficina").innerHTML = "<b>Para acceder al VDI desde la oficina hay que utilizar:<br> https://vdi.mapfre.net</b>"
+			}
+			else{
+				document.getElementById("ErrorGenesysAccesoOficina").innerHTML = ""
+				document.getElementById("ErrorGenesysAccesoOficina").hidden = true;
+			}
+			
+		}
+		else {
+			document.getElementById("gNPoli").hidden = false;
+			document.getElementById("gNMatri").hidden = false;
+			document.getElementById("gDNICIFNIF").hidden = false;
+			document.getElementById("gTTelefono").hidden = false;
+			document.getElementById("gMACTelefono").hidden = false;
+			document.getElementById("gExtTelefono").hidden = false;
+			document.getElementById("gClienteCorreo").hidden = false;
+
+			
+			document.getElementById("taGenesys").hidden = true;
+			document.getElementById("rTituGenesys").hidden = true;
+			document.getElementById("textoGenesys").hidden = true;
+			document.getElementById("tOfiGenesys").hidden = true;
+			document.getElementById("pAccGenesys").hidden = true;
+			document.getElementById("gGenesysTelef").hidden = true;
+			document.getElementById("gGenesysVDI").hidden = true;
+			document.getElementById("gGenesysVCitrix").hidden = true;
+			document.getElementById("tOfi").hidden = false;
+			document.getElementById("pAcc").hidden = false;
+			document.getElementById("ErrorGenesysAccesoOficina").hidden = true;
+				document.getElementById("textoGenesysTelef").hidden = true;
+				document.getElementById("textoGenesysVDI").hidden = true;
+		}
+		
+		if(appTitulo == "CAAM"){
+			document.getElementById("gNPoli").hidden = true;
+			document.getElementById("gNMatri").hidden = true;
+			document.getElementById("gDNICIFNIF").hidden = true;
+			document.getElementById("gNavegador").hidden = true;
+			document.getElementById("gConexion").hidden = true;
+			document.getElementById("gTTelefono").hidden = true;
+			document.getElementById("gMACTelefono").hidden = true;
+			document.getElementById("gExtTelefono").hidden = true;
+			document.getElementById("gDesdePasa").hidden = true;
+			document.getElementById("gHorarioM").hidden = true;
+			document.getElementById("gHorarioT").hidden = true;
+			document.getElementById("gHoraCanaria").hidden = true;
+			document.getElementById("gNumPuesto").hidden = true;
+			document.getElementById("gSecuenciaCapturas").hidden = true;
+			document.getElementById("gClienteCorreo").hidden = true;
+			document.getElementById("rTitu").hidden = true;
+			document.getElementById("gUsuarioCA").hidden = false;
+			document.getElementById("gTituloCAAM").hidden = false;
+			document.getElementById("CAAMSol").hidden = false;
+			document.getElementById("tOfi").value = "Oficina Externa";
+			document.getElementById("tEqui").value = "Equipo Propio";
+			document.getElementById("pAcc").value = "profesionalsanitario.mapfre.es";
+			titulo = document.getElementById("gTituloCAAM").value;
+			if(titulo == "otro"){
+				document.getElementById("OtroCAAM").hidden = false;
+				document.getElementById("gNPoli").hidden = false;
+				document.getElementById("gNMatri").hidden = false;
+				document.getElementById("gDNICIFNIF").hidden = false;
+				document.getElementById("gNavegador").hidden = false;
+				document.getElementById("gConexion").hidden = false;
+				document.getElementById("gTTelefono").hidden = false;
+				document.getElementById("gMACTelefono").hidden = false;
+				document.getElementById("gExtTelefono").hidden = false;
+				document.getElementById("gDesdePasa").hidden = false;
+				document.getElementById("gHorarioM").hidden = false;
+				document.getElementById("gHorarioT").hidden = false;
+				document.getElementById("gHoraCanaria").hidden = false;
+				document.getElementById("gNumPuesto").hidden = false;
+				document.getElementById("gSecuenciaCapturas").hidden = false;
+				document.getElementById("gClienteCorreo").hidden = false;
+				titulo = document.getElementById("OtroCAAM").value;
+			}
+			else{
+				document.getElementById("OtroCAAM").hidden = true;
+			}
+		}
+		else{
+			if(!appTitulo.includes("Genesys"))document.getElementById("gNPoli").hidden = false;
+			if(!appTitulo.includes("Genesys"))document.getElementById("gNMatri").hidden = false;
+			if(!appTitulo.includes("Genesys"))document.getElementById("gDNICIFNIF").hidden = false;
+			document.getElementById("gNavegador").hidden = false;
+			document.getElementById("gConexion").hidden = false;
+			if(!appTitulo.includes("Genesys"))document.getElementById("gTTelefono").hidden = false;
+			if(!appTitulo.includes("Genesys"))document.getElementById("gMACTelefono").hidden = false;
+			if(!appTitulo.includes("Genesys"))document.getElementById("gExtTelefono").hidden = false;
+			document.getElementById("gDesdePasa").hidden = false;
+			document.getElementById("gHorarioM").hidden = false;
+			document.getElementById("gHorarioT").hidden = false;
+			document.getElementById("gHoraCanaria").hidden = false;
+			document.getElementById("gNumPuesto").hidden = false;
+			document.getElementById("gSecuenciaCapturas").hidden = false;
+			if(!appTitulo.includes("Genesys"))document.getElementById("gClienteCorreo").hidden = false;
+			document.getElementById("rTitu").hidden = false;
+			document.getElementById("gUsuarioCA").hidden = true;
+			document.getElementById("gTituloCAAM").hidden = true;
+			document.getElementById("CAAMSol").hidden = true;
+			document.getElementById("OtroCAAM").hidden = true;
+		}
+
+		if(pAcc != ""){ 
+			if(pAcc == "Otro") {
+				let pAcc2 = document.getElementById("pAcc2").value;
+				pAcc2.hidden = false;
+				pAcc = pAcc2;
+			}
+
+			pAcc = pAcc;
+			
+		}
+	
+		document.getElementById("titulo").innerHTML = appTitulo + " - " + titulo + " / " + tOfi + " / " + tEqui + " / " + pAcc;
+	}
+
+	function mostrarDatos() {
+		document.getElementById("div1").className = "col-6 border border-info";
+		let desc = document.getElementById("descripcion").value;
+		let tOfi = (document.getElementById("tOfi").hidden == false)? document.getElementById("tOfi").value : document.getElementById("tOfiGenesys").value;
+		let tEqui = document.getElementById("tEqui").value;
+		let pAcc = (document.getElementById("pAcc").hidden == false)? document.getElementById("pAcc").value : document.getElementById("pAccGenesys").value;
+		let Dpasa = document.getElementById("Dpasa").value;
+		let nav = document.getElementById("nav").value;
+		let tCon = document.getElementById("tCon").value;
+		let email = document.getElementById("email").value;
+		let nPoliza = document.getElementById("nPoliza").value;
+		let capturas = document.getElementById("capturas").checked;
+		let hCanaria = document.getElementById("hCanaria").checked;
+		let puesto = document.getElementById("puesto").value;
+		let HoraM1 = document.getElementById("HoraM1").value;
+		let HoraM2 = document.getElementById("HoraM2").value;
+		let HoraT1 = document.getElementById("HoraT1").value;
+		let HoraT2 = document.getElementById("HoraT2").value;
+		let user = document.getElementById("user").value;
+		let Telf1 = document.getElementById("Telf1").value;
+		let tipoCorreo = document.getElementById("tipoCorreo").value;
+		let ponerBarrita = false;
+		let tipoTelf = document.getElementById("tipoTelf").value;
+		let macTelf = document.getElementById("macTelf").value;
+		let extTelf = document.getElementById("extTelf").value;
+		let nMat = document.getElementById("nMat").value;
+		let gCIFNIF = document.getElementById("gCIFNIF").value;
+		let gescomInsta = document.getElementById("rTituIGes").value;
+		let UsuarioCA = document.getElementById("CAUser").value;
+		let nuumaAf = document.getElementById("nuumaAfectado").value;
+		let versionCitrix = (document.getElementById("versionCitrix").hidden == false)?document.getElementById("versionCitrix").value: "";
+		
+		// Nuevo añadido 04/04/2022
+		
+		let tipoPoliza = document.getElementById("seleccionarPoliza").value;
+		let valorOtrosPoliza = document.getElementById("InputOtrosPoliza").value;
+		let tipoAplicacion = document.getElementById("seleccionarAplicacion").value;
+		let valorOtrosAplicacion = document.getElementById("InputOtrosAplicacion").value;
+		let numeroAfectados = document.getElementById("gNumUsuarios").value;
+		
+		let NifTomadorPoliza = document.getElementById("NifTomadorPoliza").value;
+
+		if(NifTomadorPoliza != "") NifTomadorPoliza = "<br>NIF del tomador de la póliza: " + NifTomadorPoliza;
+
+		if(numeroAfectados != "") {
+			numeroAfectados = "<br>N.º de afectados: "+ numeroAfectados;
+			ponerBarrita = true;
+		}
+
+		if(tipoPoliza != "") {
+			if(tipoPoliza == 'otro'){
+				document.getElementById("InputOtrosPoliza").hidden = false;
+			}
+			if(tipoPoliza == 'otro'){
+			tipoPoliza = "<br>Tipo poliza: "+ valorOtrosPoliza;
+			ponerBarrita = true;
+			}else{
+			tipoPoliza = "<br>Tipo poliza: "+ tipoPoliza;
+			ponerBarrita = true;
+			}
+		}
+
+		if(tipoAplicacion != "") {
+			if(tipoAplicacion == 'Otros'){
+				document.getElementById("InputOtrosAplicacion").hidden = false;
+			}if(tipoAplicacion == 'Otros'){
+				tipoAplicacion = "<br>Aplicación Emisora: "+ valorOtrosAplicacion;
+				ponerBarrita = true;
+			}else{
+				tipoAplicacion = "<br>Aplicación Emisora: "+ tipoAplicacion;
+				ponerBarrita = true;
+			}
+
+		}
+
+		// Fin Nuevo añadido 04/04/2022
+			
+		if(versionCitrix != "") {
+			versionCitrix = "<br>Versión de Citrix: " + versionCitrix;
+			ponerBarrita = true;
+		}
+		if(nuumaAf != "") {
+			nuumaAf = "<br>Nuuma del usuario afectado: " + nuumaAf;
+			ponerBarrita = true;
+		}
+		if(UsuarioCA != "") {
+			UsuarioCA = "<br>Usuario CAAM: " + UsuarioCA;
+			ponerBarrita = true;
+		}
+		if(gescomInsta != "") {
+			gescomInsta = "<br>Instalación de gescom: " + gescomInsta;
+			ponerBarrita = true;
+		}
+		if(gCIFNIF != ""){
+			gCIFNIF = "<br>NIF / CIF: " + gCIFNIF;
+			ponerBarrita = true;
+		}
+		if(nMat != ""){
+			nMat = "<br>Número de matrícula: " + nMat
+			ponerBarrita = true;
+		}
+		if(tipoTelf != ""){
+			tipoTelf = "<br>Tipo teléfono: " + tipoTelf
+			ponerBarrita = true;
+		}
+		if(extTelf != ""){
+			extTelf = "<br>Extensión teléfono: " + extTelf
+			ponerBarrita = true;
+		}
+		if(macTelf != ""){
+			macTelf = "<br>MAC teléfono: " + macTelf
+			ponerBarrita = true;
+		}
+		if(tipoCorreo != "") {
+			tipoCorreo = "<br>Tipo correo: " + tipoCorreo;
+			ponerBarrita = true;
+		}
+		if(desc != "") desc = "Descripción del problema:<br> " + desc;
+		if(tOfi != "") {
+			let ofiSi24 = "";
+			ponerBarrita = true;
+			if(tOfi == "Oficina SI24"){
+				document.getElementById("ofiSi24").hidden = false;
+				if(document.getElementById("ofiSi24").value != "") ofiSi24 = " -- " + document.getElementById("ofiSi24").value;
+			}
+			else {
+				document.getElementById("ofiSi24").hidden = true;
+				ofiSi24 = "";
+			}
+			tOfi = "<br>Tipo de oficina: " + tOfi + ofiSi24;
+		}
+			else {
+				document.getElementById("ofiSi24").hidden = true;
+				ofiSi24 = "";
+			}
+		if(nav != "") {
+			nav = "<br>Navegador: " + nav;
+			ponerBarrita = true;
+		}
+		if(tEqui != "") tEqui = "<br>Tipo de equipo: " + tEqui;
+		if(pAcc != ""){ 
+			if(pAcc == "Otro") {
+				let pAcc2 = document.getElementById("pAcc2");
+				pAcc2.hidden = false;
+				pAcc = pAcc2.value;
+			}
+			else document.getElementById("pAcc2").hidden = true;
+
+			pAcc = "<br>¿Desde dónde accede?: " + pAcc;
+			ponerBarrita = true;
+			
+		}
+		if(tCon != "") {
+			tCon = "<br>Tipo de conexión: " + tCon;
+			ponerBarrita = true;
+		}
+		if(Dpasa != "") {
+			Dpasa = new Date(Dpasa);
+			Dpasa = "<br>&#191;Desde cuándo le pasa? " + Dpasa.getDate() + "/" + (Dpasa.getMonth()+1) + "/" + Dpasa.getFullYear();
+			ponerBarrita = true;
+		}
+		if(Telf1 != "") {
+			Telf1 = "<br> Teléfono de contacto: " + Telf1;
+			ponerBarrita = true; 
+		}
+		if(email != "") {
+			email = "<br>Email: " + correoMapfre(email);
+			ponerBarrita = true;
+		}
+		if(user != "") {
+			user = "<br>Persona de contacto: " + user;
+			ponerBarrita = true;
+		}
+		if(nPoliza != "") {
+			nPoliza = "<br>Número de póliza, recibo, referencia: " + nPoliza;
+			ponerBarrita = true;
+		}
+		if(puesto != "") {
+			puesto = "<br>Número de puesto: " + puesto;
+			ponerBarrita = true;
+		}
+		
+		var comproGeneral = "";
+		var comproUserPass = "";
+		var comproSaliente = "";
+		var comproColaOn = "";
+		var comproAcceso = "";
+
+		if(document.getElementById("gGenesysTelef").hidden == false){
+			comproGeneral = (document.getElementById("gGeneChecksTelef").checked)? "Se confirman con el usuario los checks antes de dar la incidencia<br>" : "";
+			comproUserPass = (document.getElementById("gGeneUserPass").checked)? "Se confirma con el usuario que reconoce su usuario y contraseña<br>" : "";
+			comproSaliente = (document.getElementById("gGeneSaliente").checked)? "Se confirma con el usuario que puede hacer llamadas salientes<br>" : "";
+			comproColaOn = (document.getElementById("gGenecolaOn").checked)? "Se confirma con el usuario que puede ponerse en cola<br>" : "";
+			comproAcceso = (document.getElementById("gGeneLogoMicro").checked)? "Se confirmacon el usuario que accede a través del logo de microsoft<br>" : "";
+		}	
+
+		var WVD1 = "";
+		var WVD2 = "";
+		var WVD3 = "";
+		var WVD4 = "";
+
+		WVD1 = (document.getElementById("opciones1").checked)? "<br>Se prueba a acceder a través de https://rdweb.wvd.microsoft.com/arm/webclient y accede correctamente.<br>" : "";
+		
+		WVD4 = (document.getElementById("opciones11").checked)? "<br>Se prueba a acceder a través de https://rdweb.wvd.microsoft.com/arm/webclient, pero el problema persiste.<br>" : "";
+
+		if(document.getElementById("siEquipoMapfre").hidden == false){
+			WVD2 = (document.getElementById("opciones3").checked)? "Probamos a cancelar suscripción y suscribir al usuario en la aplicación remote desktop, y tras realizar dicha prueba confirmamos que el problema queda resuelto.<br>" : "";
+
+		}
+
+		if(document.getElementById("siEquipoMapfre").hidden == false){
+			WVD3 = (document.getElementById("opciones33").checked)? "Probamos a cancelar suscripción y suscribir al usuario en la aplicación remote desktop, pero el problema persiste.<br>" : "";
+
+		}
+
+
+
+		var comproTodoCon = "";
+		var comproConecDirec = "";
+		var comproConexUSB = "";
+		var comproVerifCPF = "";
+		var comproVerifCPV = "";
+
+		if(document.getElementById("gGenesysVDI").hidden == false){
+			comproTodoCon = (document.getElementById("gGenetodoConectado").checked)? "Se confirma con el usuario que estaba todo conectado antes de iniciar el puesto<br>" : "";
+			comproConecDirec = (document.getElementById("gGeneconectadosDirectamente").checked)? "Se confirma con el usuario que los cascos estan conectados directamente al puesto físico<br>" : "";
+			comproConexUSB = (document.getElementById("gGeneconexUSB").checked)? "Se confirma con el usuario que los cascos estan por USB<br>" : "";
+			comproVerifCPF = (document.getElementById("gGeneverifCascosPF").checked)? "Se confirma con el usuario que estan seleccionados en el puesto físico<br>" : "";
+			comproVerifCPV = (document.getElementById("gGeneverifCascosPF").checked)? "Se confirmacon el usuario que estan seleccionados en el puesto virtual<br>" : "";
+		}
+		
+		if(hCanaria) hCanaria = "Hora canaria (Una hora menos) ";
+		else hCanaria = "";
+		let HoraM = "";
+		if(HoraM1 != "" && HoraM2 != "") HoraM = "<br>Horario de contacto de: " + hCanaria + HoraM1 + " a " + HoraM2;
+		let HoraT = "";
+		if(HoraT1 != "" && HoraT2 != "") HoraT = " y de " + HoraT1 + " a " + HoraT2;
+		if(capturas){
+			capturas = "<br>&#191;Secuencia de capturas solicitada en llamada? Si";
+			document.getElementById("customerEnLlamada").hidden = false;
+		}
+		else {
+			capturas = "";
+			document.getElementById("customerEnLlamada").hidden = true;
+		}
+		if(ponerBarrita && desc != "") desc += barrita;
+	
+		let incidencia = desc + nuumaAf + comproTodoCon + comproConecDirec+ tipoPoliza + NifTomadorPoliza + tipoAplicacion + comproConexUSB + comproVerifCPF + comproVerifCPV + comproGeneral + WVD1 + WVD2 + WVD3 + WVD4 + comproUserPass + comproSaliente + comproColaOn + comproAcceso + versionCitrix + gescomInsta + nPoliza + nMat + gCIFNIF + tOfi + nav + tEqui + pAcc + tipoTelf + extTelf + macTelf + Dpasa + numeroAfectados + tCon + user + UsuarioCA + email + Telf1 + HoraM + "" + HoraT + puesto + tipoCorreo + capturas;
+
+		document.getElementById("Copiar").innerHTML = incidencia;
+	}
+
+	function copiarTexto(copiar){
+		
+		let seleccion = document.createRange();
+		seleccion.selectNodeContents(copiar);
+		window.getSelection().removeAllRanges();
+		window.getSelection().addRange(seleccion);
+		var res = document.execCommand('copy');
+		window.getSelection().removeRange(seleccion);
+
+	}
+
+	function trampas(){
+		
+		let telf = document.getElementById("trampita1").value;
+		let fecha = document.getElementById("trampita2").value;
+
+		if(fecha != "") {
+			fecha = new Date(fecha);
+			fecha = ": " + fecha.getDate() + "/" + (fecha.getMonth()+1) + "/" + fecha.getFullYear();
+		}
+
+		if(document.getElementById("infoSolPSR").checked){
+			var PSR = '<br>Necesitamos que amplíe la información que nos ha facilitado, aportando secuencia completa de capturas de pantallas desde que accede al portal/aplicación o servicio, hasta el mensaje de error u opción en la que no le permite continuar. Puede acceder a la herramienta de capturas de pantalla pulsando el botón "Inicio" de Windows y, sin pulsar nada más, escribir “psr”. En caso de que no le aparezca dicha herramienta escriba “Step Recorder”, de tal manera que la búsqueda mostrará “psr.exe”, “Grabación de acciones de usuario”, o “Step Recorder” programa que se deberá ejecutar. Agradeceríamos que realice una grabación lo más completa posible, en la que se incluya la última pantalla pulsando sobre ella antes de detener la grabación.<br>'
+		}
+		else PSR = "";
+		if(document.getElementById("infoSolTH").checked){
+			var TH = "<br>Necesitamos que amplíe la información que nos ha facilitado proporcionando un teléfono y horario de contacto alternativo.<br>"
+		}
+		else TH = "";
+		/*if(document.getElementById("infoSolEstado").checked){
+			var Estado = "<br>Necesitamos hablar con usted para actualizar el estado actual de su solicitud.<br>"
+		}
+		else Estado = "";*/
+		if(document.getElementById("otraInfoEH").checked){
+			document.getElementById("textoOtraInfoEH").hidden = false;
+			let texto = document.getElementById("textoOtraInfoEH").value;
+			var otraInfo = "Para continuar con la gestión de la incidencia, si desea puede aportar la siguiente información accediendo a través de la web del SAU:<br>" + texto;
+		}
+		else {
+			otraInfo = "";
+			document.getElementById("textoOtraInfoEH").hidden = true;
+		}
+		if(document.getElementById("propiosCapturasEH").checked){
+			var PSRProp = "Necesitamos que amplíe la información que nos ha facilitado, aportando secuencia completa de capturas de pantallas desde que accede al portal/aplicación o servicio, hasta el mensaje de error u opción en la que no le permite continuar. En caso de encontrarse en un equipo propio, puede acceder a la herramienta de capturas de pantalla pulsando el botón Inicio de Windows y, sin pulsar nada más, escribir psr, la búsqueda mostrará psr.exe o Grabación de acciones de usuario, el cual deberá ejecutar. Agradeceríamos que realice una grabación lo más completa posible, en la que se incluya la última pantalla pulsando sobre ella antes de detener la grabación."
+		}
+		else{
+			PSRProp = ""
+		}
+
+		let hora = document.getElementById("trampita3").value;
+
+		document.getElementById("trampita").innerHTML = "<hr><p>Estimado usuario,</p><p>Hemos intentado contactar con usted al teléfono: " + telf + " el día" + fecha + " a las " + hora + " sin éxito.<br>" + PSR + PSRProp + TH + otraInfo + "<p>Muchas gracias.</p><p>Un saludo.</p></p>";
+
+	}
+
+	function trampasFH(){
+
+		if(document.getElementById("infoSolPSRFH").checked){
+			var PSR = '<br>Necesitamos que amplíe la información que nos ha facilitado, aportando secuencia completa de capturas de pantallas desde que accede al portal/aplicación o servicio, hasta el mensaje de error u opción en la que no le permite continuar. Puede acceder a la herramienta de capturas de pantalla pulsando el botón "Inicio" de Windows y, sin pulsar nada más, escribir “psr”. En caso de que no le aparezca dicha herramienta escriba “Step Recorder”, de tal manera que la búsqueda mostrará “psr.exe”, “Grabación de acciones de usuario”, o “Step Recorder” programa que se deberá ejecutar. Agradeceríamos que realice una grabación lo más completa posible, en la que se incluya la última pantalla pulsando sobre ella antes de detener la grabación.<br>'
+		}
+		else PSR = "";
+		if(document.getElementById("infoSolTHFH").checked){
+			var TH = "<br>Necesitamos que amplíe la información que nos ha facilitado proporcionando un teléfono y horario de contacto alternativo.<br>"
+		}
+		else TH = "";
+		if(document.getElementById("otraInfoFH").checked){
+			document.getElementById("textoOtraInfoFH").hidden = false;
+			let texto = document.getElementById("textoOtraInfoFH").value;
+			var otraInfo = texto;
+		}
+		else {
+			otraInfo = "";
+			document.getElementById("textoOtraInfoFH").hidden = true;
+		}
+		if(document.getElementById("propiosCapturasFH").checked){
+			var PSRProp = "Necesitamos que amplíe la información que nos ha facilitado, aportando secuencia completa de capturas de pantallas desde que accede al portal/aplicación o servicio, hasta el mensaje de error u opción en la que no le permite continuar. En caso de encontrarse en un equipo propio, puede acceder a la herramienta de capturas de pantalla pulsando el botón Inicio de Windows y, sin pulsar nada más, escribir psr, la búsqueda mostrará psr.exe o Grabación de acciones de usuario, el cual deberá ejecutar. Agradeceríamos que realice una grabación lo más completa posible, en la que se incluya la última pantalla pulsando sobre ella antes de detener la grabación."
+		}
+		else{
+			PSRProp = ""
+		}
+
+
+		document.getElementById("trampitaFH").innerHTML = "<hr><p>Estimado usuario,</p><p>Le informamos que nos pondremos en contacto con usted dentro del horario indicado.<br>Para continuar con la gestión de la incidencia, si desea puede aportar la siguiente información accediendo a través de la web del SAU:<br>" + PSR + PSRProp + TH + otraInfo + "<p>Muchas gracias.</p><p>Un saludo.</p></p>";
+
+	}
+
+	function tramp(){
+	
+		let titulo = document.getElementById("trampass").value;
+
+		document.getElementById("trampa1").innerHTML = "";
+		document.getElementById("trampa1").innerHTML = "<hr>Incidencia de acceso a sistemas / " + titulo;
+		
+	}
+
+	function trampReclamar(){
+
+		let texto = document.getElementById("reclamacionesTrampa").value;
+
+		document.getElementById("trampaReclamar").innerHTML = "<hr>El usuario nos reclama la solicitud indicando lo siguiente:<br>" + texto;
+
+	}
+
+	function correoMapfre(email){
+		
+
+		if(email.includes("mapfre.net") || email.includes("MAPFRE.NET")) email = email.toLowerCase().replace(".net", ".com");
+
+		if(document.getElementById("mAppcol").checked == true){
+
+			document.getElementById("AppEmail").value = email;
+
+		}
+
+		if(document.getElementById("mGenerica").checked == true) {
+
+			document.getElementById("email").value = email;
+
+		}
+
+		if(document.getElementById("mMasivas").checked == true) {
+
+			document.getElementById("masEmail").value = email;
+
+		}
+
+
+		return email;
+
+	}
+
+	function FSDMismoUserYProblemHP(){
+
+		let sd = document.getElementById("SDMismoUserYProblemHP").value;
+
+		document.getElementById("TSDMismoUserYProblemHP").innerHTML = "<hr>Estimado usuario,<br>Le informamos que estamos gestionando su solicitud a través de la  incidencia " + sd + " y por tanto procedemos al cierre de esta incidencia por duplicidad. Por favor, si necesita reclamar o actualizar su caso, acceda a la Web del SAU y realice las acciones pertinentes. Si tiene alguna consulta sobre la resolución de su incidencia póngase de nuevo en contacto con nosotros en el 91 581 49 00.<br><br>Gracias por su comprensión.<br>Un saludo."
+
+	}
+
+	function FIncidenciaSantanderHP(){
+		
+		let texto = document.getElementById("TextoIncidenciaSantanderHP").value;
+
+		document.getElementById("TIncidenciaSantanderHP").innerHTML = "<hr>Estimado usuario,<br>Le informamos que, tras ser analizada su solicitud por el equipo técnico, nos indican lo siguiente:<br>" + texto + "<br>En caso de persistir su problema a pesar de las instrucciones que le han proporcionado, rogamos proceda a la apertura de una nueva solicitud a través de la web del SAU.<br>Disculpe las molestias ocasionadas.<br><br>Gracias,<br>Un saludo."
+
+	}
+
+	function FIncidenciaNSantanderHP(){
+		
+		let texto = document.getElementById("TextoIncidenciaNSantanderHP").value;
+
+		document.getElementById("TIncidenciaNSantanderHP").innerHTML = "<hr>Estimado usuario,<br>Le informamos que, tras ser analizada su solicitud por el equipo técnico, nos indican lo siguiente:<br>" + texto + "<br>En caso de persistir su problema a pesar de las instrucciones que le han proporcionado, rogamos proceda a la apertura de una nueva solicitud a través de la web del SAU o puede ponerse en contacto telefónicamente con el SAU donde le atenderemos para revisar su caso.<br>Disculpe las molestias ocasionadas.<br><br>Gracias,<br>Un saludo."
+
+	}
+
+	function FNoReproSoluCla(){
+		
+		let texto = document.getElementById("TextoNoReproSoluCla").value;
+
+		document.getElementById("TNoReproSoluCla").innerHTML = "<hr>Estimado usuario,<br>Le informamos que, tras ser analizada su solicitud por el equipo técnico, nos indican lo siguiente:<br>" + texto + "<br>En caso de persistir su problema a pesar de las instrucciones que le han proporcionado, rogamos proceda a la apertura de una nueva solicitud a través de la web del SAU o puede ponerse en contacto telefónicamente con el SAU donde le atenderemos para revisar su caso.<br>Disculpe las molestias ocasionadas.<br><br>Gracias,<br>Un saludo."
+
+	}
+
+	function FNoesInCla(){
+		
+		let texto = document.getElementById("TextoNoesInCla").value;
+
+		document.getElementById("TNoesInCla").innerHTML = "<hr>Estimado usuario,<br>Le informamos que, tras ser analizada su solicitud por el equipo técnico, nos indican lo siguiente:<br>" + texto + "<br>En caso de persistir su problema a pesar de las instrucciones que le han proporcionado, rogamos que proceda a la reapertura de su solicitud a través de la web del SAU o puede ponerse en contacto telefónicamente con el SAU donde le atenderemos para revisar su caso.<br>Disculpe las molestias ocasionadas.<br>Un saludo.";
+
+	}
+
+	function FDesCorreoOpCla(){
+		
+		let texto = document.getElementById("TextoDesCorreoOpCla").value;
+
+		document.getElementById("TDesCorreoOpCla").innerHTML = "<hr>Estimado usuario,<br>Le informamos que, tras ser analizada su solicitud por el equipo técnico, nos indican que le han enviado un correo con información sobre la operativa a seguir para solucionar su solicitud.<br>" + texto + "<br>En caso de persistir su problema a pesar de las instrucciones que le han proporcionado, rogamos que proceda a la reapertura de su solicitud a través de la web del SAU o puede ponerse en contacto telefónicamente con el SAU donde le atenderemos para revisar su caso.<br>Disculpe las molestias ocasionadas.<br>Un saludo.";
+
+	}
+
+	function FIUserIProbCla(){
+		
+		let texto = document.getElementById("TextoIUserIProbCla").value;
+
+		document.getElementById("TIUserIProbCla").innerHTML = "<hr>Estimado usuario,<br>Le informamos que estamos gestionando su solicitud a través de la incidencia " + texto + " y por tanto procedemos al cierre de esta incidencia por duplicidad. Por favor, si necesita reclamar o actualizar su caso, acceda a la Web del SAY y realice las acciones pertinentes. Si tiene alguna consulta sobre la resolución de su incidencia póngase de nuevo en contacto con nosotros en el 91 581 49 00.<br><br>Gracias por su comprensión.<br>Un saludo.";
+
+	}
+
+	function FNoIMMUCla(){
+		
+		let texto = document.getElementById("TextoNoIMMUCla").value;
+
+		document.getElementById("TNoIMMUCla").innerHTML = "<hr>Procedemos a la devolución del ticket informándoles que desde el SAU necesitamos un código MU o IM válido para poder gestionar adecuadamente esta solicitud.<br>" + texto + "<br><br>Muchas gracias por su comprensión y colaboración.<br>Un saludo.";
+
+	}
+
+	function fResLlamada(){
+		
+		let texto = document.getElementById("tResLlamada").value;
+
+		document.getElementById("resLlamadaTrampita").innerHTML = "<hr>Estimado usuario,<br>Agradecemos su llamada y damos por resuelta su incidencia tras confirmarnos que después de " + texto + "<br>Reciba un cordial saludo.";
+
+	}
+
+function prueba(){
+		document.getElementById("pegar").innerHTML = "";
+		let cosas = document.getElementById("texto").value;
+		let lines = cosas.split(/\n/);
+		let p = document.createElement("p");
+		let td = document.createElement("td");
+		let idCheck = 0;
+		let tr = document.createElement("tr");
+		let check = document.createElement("input");
+		
+		for(let c = 0 ; c < lines.length ; c++){
+			if(lines[c].slice(2,3) == "/"){
+				document.getElementById("pegar").append(p);
+				document.getElementById("copiar").append(tr);
+				tr.append(td);
+				td.hidden = true;
+				td.setAttribute("id", "p" + idCheck);
+				td.setAttribute("class", "col-12");
+				check = document.createElement("input");
+				check.setAttribute("type", "checkbox");
+				check.setAttribute("onchange", "cheks(this)");
+				check.setAttribute("id", idCheck++);
+				if(c > 0) p.append(check);
+				p = document.createElement("p");
+				td = document.createElement("td");
+				tr = document.createElement("tr");
+				if(lines[c].includes("Reject Comments")){
+					p.style.backgroundColor = "#FF0022";
+					td.style.backgroundColor = "#FF0022";
+					p.style.color = "#FFFFFF";
+					td.style.color = "white";
+				}
+				if(lines[c].includes("Assignment Group Change")){
+					console.log("Jhony Easter Egg");
+					p.style.backgroundColor = "#FF9637";
+					td.style.backgroundColor = "#FF9637";
+					p.style.color = "#FFFFFF";
+					td.style.color = "white";
+				}
+				if(lines[c].includes("Assignment Group  Change")){
+					console.log("Jhony Easter Egg");
+					p.style.backgroundColor = "#FF9637";
+					td.style.backgroundColor = "#FF9637";
+					p.style.color = "#FFFFFF";
+					td.style.color = "white";
+				}
+				if(lines[c].includes("Operator Update")){
+					p.style.backgroundColor = "#222E50";
+					p.style.color = "white";
+					td.style.backgroundColor = "#222E50";
+					td.style.color = "white";
+				}
+				if(lines[c].includes("Attachment Added")){
+					p.style.backgroundColor = "#6987C9";
+					td.style.backgroundColor = "#6987C9";
+					p.style.color = "#FFFFFF";
+					td.style.color = "white";
+				}
+				if(lines[c].includes("Category Change")){
+					p.style.backgroundColor = "#A4778B";
+					td.style.backgroundColor = "#A4778B";
+					p.style.color = "#FFFFFF";
+					td.style.color = "white";
+				}
+				if(lines[c].includes("Pending Customer Comments")){
+					p.style.backgroundColor = "#0B7A75";
+					td.style.backgroundColor = "#0B7A75";
+					p.style.color = "#FFFFFF";
+					td.style.color = "white";
+				}
+				if(lines[c].includes("Pending Customer Return")){
+					p.style.backgroundColor = "#BA6E6E";
+					td.style.backgroundColor = "#BA6E6E";
+					p.style.color = "#FFFFFF";
+					td.style.color = "white";
+				}
+				if(lines[c].includes("Operator Updates")){
+					p.style.backgroundColor = "#611C35";
+					td.style.backgroundColor = "#611C35";
+					p.style.color = "#FFFFFF";
+					td.style.color = "white";
+				}
+				if(lines[c].includes("Service Desk Update")){
+					p.style.backgroundColor = "#8EA4D2";
+					td.style.backgroundColor = "#8EA4D2";
+					p.style.color = "#FFFFFF";
+					td.style.color = "white";
+				}
+				if(lines[c].includes("Update from customer")){
+					p.style.backgroundColor = "#93ACB5";
+					td.style.backgroundColor = "#93ACB5";
+					p.style.color = "#FFFFFF";
+					td.style.color = "white";
+				}
+				if(lines[c].includes("Communication to Customer")){
+					p.style.backgroundColor = "#2660A4";
+					td.style.backgroundColor = "#2660A4";
+					p.style.color = "#FFFFFF";
+					td.style.color = "white";
+				}
+				if(lines[c].includes("Claim Comments")){
+					p.style.backgroundColor = "#941B0C";
+					td.style.backgroundColor = "#941B0C";
+					p.style.color = "#FFFFFF";
+					td.style.color = "white";
+				}
+				if(lines[c].includes("Interaction activity: Service Desk Update")){
+					p.style.backgroundColor = "#8F95D3";
+					td.style.backgroundColor = "#8F95D3";
+					p.style.color = "#FFFFFF";
+					td.style.color = "white";
+				}
+				if(lines[c].includes("Interaction activity: Pending Customer Return")){
+					console.log("Sergio Easter Egg");
+					p.style.backgroundColor = "#00d5e7";
+					td.style.backgroundColor = "#00d5e7";
+					p.style.color = "#FFFFFF";
+					td.style.color = "white";
+				}
+				if(lines[c].includes("Customer Claim Requested")){
+					p.style.backgroundColor = "#B90000";
+					td.style.backgroundColor = "#B90000";
+					p.style.color = "#FFFFFF";
+					td.style.color = "white";
+				}
+				if(lines[c].includes("Customer Claim requested")){
+					p.style.backgroundColor = "#B90000";
+					td.style.backgroundColor = "#B90000";
+					p.style.color = "#FFFFFF";
+					td.style.color = "white";
+				}
+				if(lines[c].includes("Customer Claim Reopen")){
+					p.style.backgroundColor = "#BE6C6C";
+					td.style.backgroundColor = "#BE6C6C";
+					p.style.color = "#FFFFFF";
+					td.style.color = "white";
+				}
+				if(lines[c].includes("Customer Claim reopen")){
+					p.style.backgroundColor = "#BE6C6C";
+					td.style.backgroundColor = "#BE6C6C";
+					p.style.color = "#FFFFFF";
+					td.style.color = "white";
+				}
+			}
+			p.innerHTML += lines[c] + "<br>";
+			td.innerHTML += lines[c] + "<br>";
+		}
+		td.hidden = true;
+		td.setAttribute("id", "p" + idCheck);
+		td.setAttribute("class", "col-12");
+		check = document.createElement("input");
+		check.setAttribute("type", "checkbox");
+		check.setAttribute("onchange", "cheks(this)");
+		check.setAttribute("id", idCheck++);
+		p.append(check);
+		document.getElementById("pegar").append(p);
+		document.getElementById("copiar").append(tr);
+		tr.append(td);
+		sorttable.makeSortable(document.getElementById("tabla"));
+	}
+
+	function cheks(esto){
+		if(esto.checked){
+			document.getElementById("p" + esto.id).hidden = false;
+		}
+		else {
+			document.getElementById("p" + esto.id).hidden = true;
+		}
+	}
+
+</script>
+</body>
+</html>
